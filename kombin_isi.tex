@@ -1,0 +1,1364 @@
+% ====================================================================
+%  ISI MODUL BAB 2: KOMBINATORIKA
+%  Jangan dikompilasi langsung. Kompilasi salah satu dari:
+%    kombin_siswa.tex  -> Edisi Siswa
+%    kombin_guru.tex   -> Edisi Guru (ada catatan mengajar & pembahasan)
+% ====================================================================
+\makeatletter
+\@ifundefined{ifguru}{\newif\ifguru}{}
+\makeatother
+
+\documentclass[11pt,a4paper]{article}
+\input{gaya}
+
+\title{\textbf{Modul Pembinaan Olimpiade Matematika SMP\\Bab 2: Kombinatorika}}
+\author{\ifguru Edisi Guru\else Bahan Ajar Siswa (Kelas 7, 8, 9)\fi}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{tcolorbox}[title={Halo lagi, Calon Sang Juara!}]
+Di Bab 1 kamu sudah belajar mencari pola pada bilangan. Sekarang kita belajar
+\textbf{menghitung banyaknya cara}: berapa banyak susunan, pilihan, atau kemungkinan, tanpa
+harus menuliskannya satu per satu. Kalau bingung, jangan langsung cari rumus. Coba dulu dengan
+angka kecil, tulis semua kemungkinannya, lalu lihat polanya.
+\end{tcolorbox}
+
+\textbf{Cara memakai modul ini.} Sama seperti Bab 1: setiap topik dimulai dengan
+\textbf{Ayo Selidiki}, lalu dibagi menjadi beberapa langkah kecil. Di setiap langkah ada
+contoh, lalu kamu langsung mencoba sendiri di kotak \textbf{Sekarang Giliranmu}. Di akhir topik
+ada latihan soal dari Level 1 sampai Level 5.
+
+\ifguru
+\begin{catatanguru}
+\textbf{Rencana pertemuan (90 menit per pertemuan):} satu topik untuk satu pertemuan. Topik 4
+(Kombinasi) boleh dua pertemuan. Satu pertemuan terakhir untuk Soal Campuran.
+
+\textbf{Saran umum.} Tunda memberi rumus. Biarkan siswa mendaftar semua kemungkinan untuk kasus
+kecil di Ayo Selidiki. Rumus baru diberikan setelah mereka merasa ``capek mendaftar''.
+
+\textbf{Level 4 dan 5} adalah soal uraian. Nilailah dari kelengkapan alasan, bukan hanya
+jawaban akhir.
+\end{catatanguru}
+\fi
+
+\newpage
+% ====================================================================
+\section*{Topik 1: Aturan Penjumlahan dan Perkalian}
+% ====================================================================
+
+\begin{catatanguru}
+Kesalahan yang paling sering muncul: menjumlah padahal harus mengali, lupa bahwa angka 0 tidak
+boleh di depan, dan mengisi kotak dari kiri padahal syaratnya ada di kotak kanan.
+\end{catatanguru}
+
+\begin{selidiki}
+Di kantin ada 3 makanan (Nasi goreng, Mi ayam, Bakso) dan 4 minuman (Es teh, Es jeruk, Susu,
+Air). Kamu membeli satu makanan \textbf{dan} satu minuman. Isi setiap kotak dengan pasangannya,
+misalnya ``Bakso + Susu''.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|l|*{4}{>{\centering\arraybackslash}p{2.2cm}|}}
+\hline
+ & Es teh & Es jeruk & Susu & Air\\ \hline
+Nasi goreng & NG + Es teh & & & \\ \hline
+Mi ayam & & & & \\ \hline
+Bakso & & & & \\ \hline
+\end{tabular}
+\end{center}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Ada berapa pasangan seluruhnya? Bisakah kamu menghitungnya tanpa mengisi tabel?
+    \item Kalau kantin menambah 1 minuman, pasangannya bertambah berapa?
+    \item Kalau kamu hanya boleh membeli \textbf{satu saja}, makanan atau minuman, ada berapa pilihan?
+\end{enumerate}
+
+Tabelnya punya 3 baris dan 4 kolom, jadi ada $3 \times 4 = 12$ pasangan. Tapi kalau hanya
+membeli satu saja, pilihannya $3 + 4 = 7$. Kapan dikali dan kapan dijumlah? Itulah yang akan
+kita pelajari.
+\end{selidiki}
+
+\subsection*{Langkah 1: Aturan perkalian (kata kunci: DAN)}
+Kalau sebuah kegiatan dilakukan dalam beberapa tahap, \textbf{kalikan} banyak pilihan di setiap
+tahap.
+
+\begin{contoh}
+\textbf{Contoh.} Rudi punya 3 baju, 2 celana, dan 2 pasang sepatu. Ada berapa cara ia berpakaian?
+
+\textit{Jawab:} Pilih baju \textbf{dan} celana \textbf{dan} sepatu: $3 \times 2 \times 2 = \textbf{12}$ cara.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Toko roti punya 4 rasa roti dan 3 jenis selai. Banyak pasangan roti dan selai \kosong.
+    \item Dua koin dan satu dadu dilempar bersamaan. Banyak hasil yang mungkin \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Aturan penjumlahan (kata kunci: ATAU)}
+Kalau kita hanya memilih \textbf{salah satu} dari beberapa kelompok, \textbf{jumlahkan} banyak
+pilihannya.
+
+\begin{contoh}
+\textbf{Contoh.} Di kantin ada 5 jenis roti dan 3 jenis nasi. Andi hanya ingin membeli satu
+makanan. Ada berapa pilihan?
+
+\textit{Jawab:} Andi memilih roti \textbf{atau} nasi, jadi $5 + 3 = \textbf{8}$ pilihan.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Di rak ada 7 novel dan 5 komik. Dina meminjam satu buku. Banyak pilihannya \kosong.
+    \item Dari kota A ke kota B ada 2 jalur darat dan 3 jalur laut. Banyak cara pergi \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: Teknik kotak}
+Untuk menyusun bilangan, gambar kotak sebanyak digitnya, isi setiap kotak dengan banyak
+pilihannya, lalu kalikan. Kalau angka tidak boleh berulang, pilihannya berkurang satu per satu.
+
+\begin{contoh}
+\textbf{Contoh.} Dari angka 1, 2, 3, 4, 5 dibuat bilangan 3 digit tanpa angka berulang.
+Ada berapa bilangan?
+
+\textit{Jawab:} Ratusan 5 pilihan, puluhan tinggal 4, satuan tinggal 3.
+Jadi $5 \times 4 \times 3 = \textbf{60}$ bilangan.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Bilangan 2 digit dari angka 1, 2, 3 (boleh berulang) ada \kosong.
+    \item Bilangan 3 digit dari angka 1 sampai 6 tanpa angka berulang ada \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 4: Kotak yang punya syarat}
+Kotak yang punya syarat (misalnya harus genap) diisi \textbf{paling dulu}. Ingat juga, angka 0
+tidak boleh berada di depan.
+
+\begin{contoh}
+\textbf{Contoh.} Dari angka 1, 2, 3, 4, 5 dibuat bilangan 3 digit ganjil tanpa angka berulang.
+Ada berapa bilangan?
+
+\textit{Jawab:} Satuan punya syarat, jadi diisi duluan: 1, 3, atau 5 (3 pilihan). Ratusan
+tinggal 4 pilihan, puluhan tinggal 3. Jadi $3 \times 4 \times 3 = \textbf{36}$ bilangan.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Bilangan genap 2 digit dari angka 1, 2, 3, 4 tanpa angka berulang ada \kosong.
+    \item Bilangan 2 digit dari angka 0, 1, 2, 3 tanpa angka berulang ada \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item DAN (tahap demi tahap): kalikan.
+    \item ATAU (pilih salah satu): jumlahkan.
+    \item Teknik kotak: isi setiap kotak dengan banyak pilihannya, lalu kalikan.
+    \item Kotak bersyarat diisi paling dulu. Angka 0 tidak boleh di depan.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: 12, 24. \quad Langkah 2: 12, 5. \quad Langkah 3: 9, 120.
+\quad Langkah 4: 6, 9.
+
+\newpage
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+  \item Rina punya 4 kaos dan 3 rok. Ada berapa pasangan kaos dan rok yang bisa ia pakai?
+        \jawab{12}{$4 \times 3$.}
+  \item Dari kota A ke kota B ada 3 jalan, dan dari kota B ke kota C ada 4 jalan. Ada berapa
+        rute dari A ke C lewat B?
+        \jawab{12}{$3 \times 4$.}
+  \item \textbf{(Kode Loker)} Kode loker terdiri dari 1 huruf (A sampai E) lalu 1 angka
+        (0 sampai 9), misalnya C7. Ada berapa kode yang mungkin?
+        \jawab{50}{$5 \times 10$.}
+  \item Tiga koin dilempar bersamaan. Ada berapa hasil yang mungkin?
+        \jawab{8}{$2 \times 2 \times 2$. Cocok untuk latihan menggambar diagram pohon.}
+  \item Di toko ada 4 jenis pensil dan 6 jenis pulpen. Dina hanya ingin membeli satu alat tulis.
+        Ada berapa pilihan?
+        \jawab{10}{$4 + 6$.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+  \setcounter{enumi}{5}
+  \item Ada berapa bilangan 3 digit yang bisa dibuat dari angka 0, 1, 2, 3, 4 jika angkanya
+        boleh berulang?
+        \jawab{100}{Ratusan 4 pilihan (bukan 0), puluhan 5, satuan 5.}
+  \item Ada berapa bilangan genap 3 digit yang bisa dibuat dari angka 1, 2, 3, 4, 5 tanpa
+        angka berulang?
+        \jawab{24}{Satuan 2 atau 4 (2 pilihan), lalu ratusan 4, puluhan 3.}
+  \item \textbf{(PIN Ponsel)} PIN terdiri dari 4 digit (0--9) yang semuanya berbeda.
+        Ada berapa PIN yang mungkin?
+        \jawab{5040}{$10 \times 9 \times 8 \times 7$. Di sini 0 boleh di depan karena PIN bukan bilangan.}
+  \item \textbf{(Kode Brankas)} Kode brankas terdiri dari 3 digit (0--9). Digit pertama ganjil,
+        digit kedua genap, dan digit ketiga bilangan prima. Ada berapa kode yang mungkin?
+        \jawab{100}{Ganjil 5 pilihan, genap 5 pilihan (0 termasuk genap), prima 4 pilihan (2, 3, 5, 7).}
+  \item Ada berapa bilangan 3 digit yang semua digitnya ganjil?
+        \jawab{125}{$5 \times 5 \times 5$.}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item Ada berapa bilangan genap 3 digit yang ketiga digitnya berbeda?
+        \jawab{328}{Bagi dua kasus. Satuan 0: $9 \times 8 = 72$. Satuan 2, 4, 6, atau 8:
+        $4 \times 8 \times 8 = 256$ (ratusan tidak boleh 0 dan tidak boleh sama dengan satuan).}
+  \item Ada berapa bilangan 4 digit yang keempat digitnya berbeda dan habis dibagi 5?
+        \jawab{952}{Satuan 0: $9 \times 8 \times 7 = 504$. Satuan 5: $8 \times 8 \times 7 = 448$.}
+  \item \textbf{(Peta Harta Karun)} Dari A ke D bisa lewat B atau lewat C. Dari A ke B ada 2 jalan,
+        B ke D ada 3 jalan, A ke C ada 3 jalan, dan C ke D ada 2 jalan. Ada juga 1 jalan rahasia
+        langsung dari A ke D. Ada berapa rute dari A ke D?
+        \jawab{13}{$2 \times 3 + 3 \times 2 + 1$.}
+  \item \textbf{(Bendera Kelas)} Bendera terdiri dari 3 garis mendatar dan tersedia 4 warna.
+        Dua garis yang bersebelahan tidak boleh sama warnanya. Ada berapa bendera yang bisa dibuat?
+        \jawab{36}{Atas 4 pilihan, tengah 3, bawah 3 (asal beda dari tengah).}
+  \item Ada berapa bilangan ganjil 3 digit yang digitnya berbeda dan kurang dari 500?
+        \jawab{144}{Ratusan 1 atau 3: satuan 4 pilihan, puluhan 8, jadi $2 \times 4 \times 8 = 64$.
+        Ratusan 2 atau 4: satuan 5 pilihan, puluhan 8, jadi $2 \times 5 \times 8 = 80$.}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{15}
+  \item Buktikan bahwa bilangan $2^a \times 3^b$ mempunyai tepat $(a+1)(b+1)$ faktor positif.
+        \jawab{bukti}{Setiap faktor dari $2^a \times 3^b$ hanya boleh memuat faktor prima 2 dan 3,
+        dengan pangkat yang tidak melebihi pangkat aslinya. Jadi setiap faktor berbentuk
+        $2^x \times 3^y$ dengan $x$ dari $0$ sampai $a$ dan $y$ dari $0$ sampai $b$.\\
+        Memilih $x$ ada $a + 1$ cara, \emph{dan} memilih $y$ ada $b + 1$ cara. Setiap pasangan
+        $(x, y)$ menghasilkan faktor yang berbeda (karena faktorisasi prima tunggal). Dengan
+        aturan perkalian, banyak faktornya $(a + 1)(b + 1)$. \hfill$\blacksquare$\\
+        \emph{Ini adalah alasan rumus banyak faktor di Bab 1, Topik 5.}}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{16}
+  \item Tentukan banyaknya bilangan 4 digit yang hasil kali digit-digitnya sama dengan 12.
+        Jelaskan bahwa tidak ada yang terlewat.
+        \jawab{36}{Tidak ada digit 0 (hasil kalinya akan 0). Digit yang membagi 12 hanya
+        1, 2, 3, 4, 6. Cari semua kumpulan 4 digit yang hasil kalinya 12, diurutkan dari kecil:
+        $\{1,1,2,6\}$, $\{1,1,3,4\}$, $\{1,2,2,3\}$. Tidak ada yang lain: kalau ada digit 6,
+        tiga digit lainnya berhasil kali 2, yaitu $\{1,1,2\}$; kalau ada 4 (tanpa 6), sisanya
+        berhasil kali 3, yaitu $\{1,1,3\}$; kalau tidak ada 4 dan 6, digitnya hanya 1, 2, 3, dan
+        $12 = 2 \times 2 \times 3$ memberi $\{1,2,2,3\}$.\\
+        Setiap kumpulan berisi 4 digit dengan satu digit kembar, jadi bisa disusun
+        $\frac{4!}{2!} = 12$ cara. Totalnya $3 \times 12 = 36$.}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Topik 2: Menghitung dengan Cerdik}
+% ====================================================================
+
+\begin{catatanguru}
+Banyak siswa akan menjawab ``dari halaman 5 sampai 10 ada 5 halaman''. Biarkan mereka menulis
+nomornya satu per satu di Ayo Selidiki supaya menemukan sendiri aturan $b - a + 1$.
+\end{catatanguru}
+
+\begin{selidiki}
+Rani membaca buku dari halaman 5 sampai halaman 10. Tuliskan semua nomor halaman yang ia baca:
+\rule{6cm}{0.4pt}
+
+Lengkapi tabel berikut (boleh dengan menulis nomornya).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|*{4}{>{\centering\arraybackslash}p{2cm}|}}
+\hline
+Halaman & 5 sampai 10 & 3 sampai 9 & 10 sampai 20 & 1 sampai 50\\ \hline
+Banyak halaman & & & & \\ \hline
+\end{tabular}
+\end{center}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Apakah banyak halaman dari 5 sampai 10 sama dengan $10 - 5$?
+    \item Tebak aturan untuk menghitung banyak bilangan dari $a$ sampai $b$.
+\end{enumerate}
+
+Dari halaman 5 sampai 10 ada 6 halaman, bukan 5! Banyak bilangan dari $a$ sampai $b$ adalah
+$b - a + 1$. Ini contoh menghitung dengan cerdik tanpa menulis semuanya.
+\end{selidiki}
+
+\subsection*{Langkah 1: Banyak bilangan dari $a$ sampai $b$}
+Banyak bilangan dari $a$ sampai $b$ adalah $\mathbf{b - a + 1}$. Jangan lupa tambah 1!
+
+\begin{contoh}
+\textbf{Contoh.} Ada berapa bilangan dari 15 sampai 87?
+
+\textit{Jawab:} $87 - 15 + 1 = \textbf{73}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Banyak bilangan dari 100 sampai 250 adalah \kosong.
+    \item Kursi bernomor 12 sampai 40. Banyak kursinya \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Banyak kelipatan}
+Banyak kelipatan $k$ dari 1 sampai $n$ adalah hasil bagi $n \div k$ (sisanya dibuang).
+Kalau tidak mulai dari 1, kurangi dengan kelipatan yang tidak ikut.
+
+\begin{contoh}
+\textbf{Contoh.} Ada berapa kelipatan 4 dari 30 sampai 100?
+
+\textit{Jawab:} Kelipatan 4 dari 1 sampai 100 ada 25. Dari 1 sampai 29 ada 7. Jadi
+$25 - 7 = \textbf{18}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Banyak kelipatan 5 dari 1 sampai 100 adalah \kosong.
+    \item Banyak kelipatan 3 dari 50 sampai 100 adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: Hitung yang tidak diminta}
+Kadang lebih mudah menghitung yang \textbf{tidak} diminta, lalu mengurangkannya dari semua.
+Cara ini cocok untuk soal yang ada kata ``paling sedikit satu''.
+
+\begin{contoh}
+\textbf{Contoh.} Ada berapa bilangan dari 1 sampai 1000 yang memuat angka 7?
+
+\textit{Jawab:} Hitung yang \textbf{tidak} memuat angka 7. Tulis 1 sampai 999 sebagai 3 digit
+(001 sampai 999). Setiap digit punya 9 pilihan (selain 7): $9 \times 9 \times 9 = 729$, tapi
+000 ikut terhitung, jadi 728. Angka 1000 juga tidak memuat 7.
+Jadi yang memuat angka 7 ada $1000 - 728 - 1 = \textbf{271}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Banyak bilangan 2 digit yang memuat angka 3 adalah \kosong.
+    \item Tiga koin dilempar. Banyak hasil yang memuat paling sedikit satu Gambar \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 4: Dua kelompok yang beririsan}
+Banyak (A atau B) = banyak A + banyak B $-$ banyak (A dan B).
+Bagian irisan dikurangi karena terhitung dua kali.
+
+\begin{contoh}
+\textbf{Contoh.} Ada berapa bilangan dari 1 sampai 100 yang habis dibagi 3 atau 5?
+
+\textit{Jawab:} Kelipatan 3 ada 33, kelipatan 5 ada 20, dan kelipatan 15 (habis dibagi keduanya)
+ada 6. Jadi $33 + 20 - 6 = \textbf{47}$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw[thick] (0,0) circle (1.4);
+\draw[thick, dashed] (1.8,0) circle (1.4);
+\node at (-0.5,0) {27}; \node at (0.9,0) {6}; \node at (2.3,0) {14};
+\node at (-0.6,1.8) {\small Kelipatan 3}; \node at (2.4,1.8) {\small Kelipatan 5};
+\end{tikzpicture}
+\end{center}
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Banyak bilangan dari 1 sampai 60 yang habis dibagi 2 atau 3 adalah \kosong.
+    \item Dari 40 siswa, 25 ikut futsal, 20 ikut voli, dan 10 ikut keduanya. Yang tidak ikut
+          keduanya \kosong{} siswa.
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item Banyak bilangan dari $a$ sampai $b$ adalah $b - a + 1$.
+    \item Banyak kelipatan $k$ dari 1 sampai $n$ adalah $n \div k$ (sisanya dibuang).
+    \item ``Paling sedikit satu'': hitung semua dikurangi yang tidak diminta.
+    \item A atau B = A + B $-$ (A dan B).
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: 151, 29. \quad Langkah 2: 20, 17. \quad Langkah 3: 18, 7.
+\quad Langkah 4: 40, 5.
+
+\newpage
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+  \item Ada berapa bilangan bulat dari 23 sampai 77?
+        \jawab{55}{$77 - 23 + 1$.}
+  \item \textbf{(Membaca Novel)} Rani membaca novel dari halaman 12 sampai halaman 150.
+        Berapa halaman yang ia baca?
+        \jawab{139}{$150 - 12 + 1$.}
+  \item Ada berapa kelipatan 7 dari 1 sampai 200?
+        \jawab{28}{$200 \div 7 = 28$ sisa 4.}
+  \item \textbf{(Tiang Bendera)} Di sepanjang jalan lurus 20 meter dipasang tiang bendera setiap
+        2 meter, termasuk di kedua ujungnya. Ada berapa tiang?
+        \jawab{11}{Tiang di posisi 0, 2, 4, \dots, 20.}
+  \item Ada berapa bilangan genap dari 10 sampai 50?
+        \jawab{21}{10, 12, \dots, 50 sama dengan $2 \times 5, \dots, 2 \times 25$. Jadi $25 - 5 + 1$.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+  \setcounter{enumi}{5}
+  \item Ada berapa kelipatan 6 dari 100 sampai 300?
+        \jawab{34}{Kelipatan 6 dari 1--300 ada 50, dari 1--99 ada 16.}
+  \item Ada berapa bilangan dari 1 sampai 200 yang habis dibagi 2 atau 3?
+        \jawab{133}{$100 + 66 - 33$.}
+  \item Ada berapa bilangan dari 1 sampai 100 yang tidak habis dibagi 2 dan tidak habis dibagi 5?
+        \jawab{40}{Yang habis dibagi 2 atau 5 ada $50 + 20 - 10 = 60$. Jadi $100 - 60$.}
+  \item \textbf{(Uang Saku)} Ada berapa cara membayar Rp10.000 dengan lembaran Rp1.000, Rp2.000,
+        dan Rp5.000? (Tidak harus memakai semua jenis uang.)
+        \jawab{10}{Daftar berdasarkan banyak lembar Rp5.000. Dua lembar: 1 cara. Satu lembar:
+        sisa Rp5.000 dibayar dengan 0, 1, atau 2 lembar Rp2.000, jadi 3 cara. Nol lembar:
+        sisa Rp10.000 dibayar dengan 0 sampai 5 lembar Rp2.000, jadi 6 cara.}
+  \item \textbf{(Survei Kelas)} Di kelas berisi 30 siswa, 18 suka Matematika, 15 suka IPA, dan
+        7 suka keduanya. Berapa siswa yang tidak suka keduanya?
+        \jawab{4}{$30 - (18 + 15 - 7)$.}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item Ada berapa bilangan 3 digit yang memuat paling sedikit satu angka 5?
+        \jawab{252}{Semua bilangan 3 digit ada 900. Yang tanpa angka 5 ada $8 \times 9 \times 9 = 648$.}
+  \item Empat koin dilempar bersamaan. Ada berapa hasil yang memuat paling sedikit satu sisi Gambar?
+        \jawab{15}{$16 - 1$.}
+  \item Ada berapa bilangan dari 1 sampai 1000 yang bukan bilangan kuadrat dan bukan bilangan
+        pangkat tiga?
+        \jawab{962}{Kuadrat ada 31 ($31^2 = 961$), pangkat tiga ada 10, yang keduanya sekaligus
+        ada 3 (1, 64, 729). Jadi $1000 - (31 + 10 - 3)$.}
+  \item Ada berapa bilangan 3 digit yang jumlah digitnya 5?
+        \jawab{15}{Ratusan 5: 1 bilangan. Ratusan 4: 2. Ratusan 3: 3. Ratusan 2: 4. Ratusan 1: 5.}
+  \item Ada berapa segitiga yang panjang sisinya bilangan bulat dan kelilingnya 12?
+        \jawab{3}{Urutkan sisi $a \le b \le c$ dan pakai syarat $a + b > c$. Hasilnya
+        (2, 5, 5), (3, 4, 5), dan (4, 4, 4).}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{15}
+  \item Buktikan bahwa banyak bilangan 3 digit yang jumlah digitnya 5 sama dengan banyak bilangan
+        3 digit yang jumlah digitnya 23, \emph{tanpa} menghitung keduanya.
+        \jawab{bukti}{Pasangkan bilangan $abc$ (jumlah digit 5) dengan bilangan
+        $(10 - a)(9 - b)(9 - c)$. Jumlah digitnya $28 - (a + b + c) = 28 - 5 = 23$.\\
+        Pasangan ini sah: karena $1 \le a \le 9$, maka $1 \le 10 - a \le 9$ (tetap digit depan yang
+        bukan 0), dan $9 - b$, $9 - c$ tetap digit 0 sampai 9. Sebaliknya, setiap bilangan dengan
+        jumlah digit 23 bisa dikembalikan dengan cara yang sama. Jadi setiap bilangan di kelompok
+        pertama punya tepat satu pasangan di kelompok kedua, dan banyaknya sama. \hfill$\blacksquare$\\
+        \emph{(Keduanya ada 15.) Ide memasangkan seperti ini disebut korespondensi satu-satu.}}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{16}
+  \item Tentukan banyaknya bilangan dari 1 sampai 1000 yang tidak habis dibagi 2, 3, maupun 5.
+        Jelaskan caramu.
+        \jawab{266}{Hitung yang habis dibagi 2, 3, atau 5, dengan aturan tiga kelompok:
+        tambahkan masing-masing, kurangi irisan dua-dua, lalu tambahkan irisan ketiganya.\\
+        Habis dibagi 2: 500, dibagi 3: 333, dibagi 5: 200. Dibagi 6: 166, dibagi 10: 100,
+        dibagi 15: 66. Dibagi 30: 33.\\
+        Yang habis dibagi 2, 3, atau 5 ada $500 + 333 + 200 - 166 - 100 - 66 + 33 = 734$.
+        Jadi yang tidak habis dibagi ketiganya ada $1000 - 734 = 266$.\\
+        \emph{Irisan ketiganya ditambahkan lagi karena ikut terkurangi tiga kali saat
+        mengurangi irisan dua-dua. Jelaskan dengan gambar Venn tiga lingkaran.}}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Topik 3: Permutasi (Menyusun)}
+% ====================================================================
+
+\begin{catatanguru}
+Ayo Selidiki bisa diperagakan dengan 3 siswa yang berbaris di depan kelas. Untuk huruf kembar
+(Langkah 3), tulis keenam susunan MAMA di papan supaya siswa melihat sendiri kenapa harus dibagi.
+\end{catatanguru}
+
+\begin{selidiki}
+Tiga huruf A, B, C akan disusun berjajar. Tuliskan semua susunannya.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|*{6}{>{\centering\arraybackslash}p{1.5cm}|}}
+\hline
+ABC & ACB & & & & \\ \hline
+\end{tabular}
+\end{center}
+
+Sekarang lengkapi tabel ini (coba tebak untuk 4 dan 5 huruf).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|*{5}{>{\centering\arraybackslash}p{1.2cm}|}}
+\hline
+Banyak huruf & 1 & 2 & 3 & 4 & 5\\ \hline
+Banyak susunan & 1 & 2 & & & \\ \hline
+\end{tabular}
+\end{center}
+
+Apa polanya? Coba lihat: $2 = 2 \times 1$, lalu $6 = 3 \times 2 \times 1$. Untuk 4 huruf,
+posisi pertama ada 4 pilihan, posisi kedua 3, dan seterusnya, jadi $4 \times 3 \times 2 \times 1 = 24$.
+\end{selidiki}
+
+\subsection*{Langkah 1: Faktorial}
+$n! = n \times (n-1) \times \dots \times 2 \times 1$, dibaca ``$n$ faktorial''.
+Contoh: $4! = 24$, $5! = 120$, $6! = 720$. Menyusun $n$ benda berbeda ada $n!$ cara.
+
+\begin{contoh}
+\textbf{Contoh.} Lima sahabat berfoto berjajar. Ada berapa susunan?
+
+\textit{Jawab:} $5! = 5 \times 4 \times 3 \times 2 \times 1 = \textbf{120}$ susunan.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Banyak cara 6 orang antre di kasir adalah \kosong.
+    \item Nilai $\dfrac{6!}{4!}$ adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Memilih juara (urutan penting)}
+Kalau hanya sebagian yang disusun, misalnya juara 1, 2, 3 dari 8 peserta, kalikan saja
+$8 \times 7 \times 6$ (sebanyak posisi yang diisi).
+
+\begin{contoh}
+\textbf{Contoh.} Dari 8 peserta dipilih juara 1, 2, dan 3. Ada berapa kemungkinan?
+
+\textit{Jawab:} $8 \times 7 \times 6 = \textbf{336}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Ketua dan wakil ketua dipilih dari 10 siswa. Banyak caranya \kosong.
+    \item PIN 3 digit berbeda dari angka 1 sampai 9 ada \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: Huruf kembar}
+Kalau ada huruf yang sama, bagi dengan faktorial banyaknya. Contoh MAMA: huruf M ada 2 dan
+A ada 2, jadi $\dfrac{4!}{2! \times 2!} = 6$.
+
+\begin{contoh}
+\textbf{Contoh.} Ada berapa susunan huruf dari kata KATAK?
+
+\textit{Jawab:} Ada 5 huruf: K dua kali, A dua kali, T sekali.
+$\dfrac{5!}{2! \times 2!} = \dfrac{120}{4} = \textbf{30}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Banyak susunan huruf MAMA adalah \kosong.
+    \item Banyak susunan huruf ADA adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 4: Harus berdampingan dan duduk melingkar}
+\textbf{Harus berdampingan:} ikat keduanya jadi satu, lalu ingat mereka bisa bertukar tempat.
+\textbf{Duduk melingkar:} $n$ orang mengelilingi meja bundar ada $(n-1)!$ cara.
+
+\begin{contoh}
+\textbf{Contoh.} Ayah, Ibu, dan 3 anak berfoto berjajar. Ayah dan Ibu harus berdampingan.
+Ada berapa susunan?
+
+\textit{Jawab:} Anggap Ayah dan Ibu satu orang. Ada 4 ``orang'' yang disusun: $4! = 24$ cara.
+Ayah dan Ibu bisa bertukar tempat (2 cara). Jadi $24 \times 2 = \textbf{48}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item 4 orang (termasuk A dan B) berjajar, A dan B berdampingan. Banyak susunannya \kosong.
+    \item 4 orang duduk mengelilingi meja bundar. Banyak susunannya \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item Menyusun $n$ benda berbeda: $n!$ cara.
+    \item Memilih juara 1, 2, 3 dari $n$: $n \times (n-1) \times (n-2)$.
+    \item Huruf kembar: bagi dengan faktorial banyaknya huruf yang sama.
+    \item Berdampingan: ikat jadi satu, kali 2. Melingkar: $(n-1)!$.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: 720, 30. \quad Langkah 2: 90, 504. \quad Langkah 3: 6, 3.
+\quad Langkah 4: 12, 6.
+
+\newpage
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+  \item Hitunglah $5!$ dan $\dfrac{7!}{5!}$.
+        \jawab{120 dan 42}{$\frac{7!}{5!} = 7 \times 6$. Ajarkan untuk mencoret, bukan menghitung $5040 \div 120$.}
+  \item Ada berapa cara menyusun 4 buku berbeda di rak?
+        \jawab{24}{$4!$.}
+  \item Dari 6 peserta lomba akan dipilih juara 1 dan juara 2. Ada berapa kemungkinan?
+        \jawab{30}{$6 \times 5$.}
+  \item Ada berapa susunan huruf dari kata BUKU?
+        \jawab{12}{$\frac{4!}{2!}$, karena huruf U ada dua.}
+  \item Dari 7 siswa akan dipilih ketua, sekretaris, dan bendahara. Ada berapa cara?
+        \jawab{210}{$7 \times 6 \times 5$.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+  \setcounter{enumi}{5}
+  \item Ada berapa susunan huruf dari kata MATEMATIKA?
+        \jawab{151.200}{Ada 10 huruf: M dua kali, A tiga kali, T dua kali. Jadi $\frac{10!}{2! \times 3! \times 2!}$.}
+  \item Dari susunan huruf KATAK, ada berapa yang diawali huruf K?
+        \jawab{12}{Huruf K di depan, sisanya A, T, A, K disusun: $\frac{4!}{2!}$.}
+  \item Enam siswa, termasuk Andi dan Budi, duduk berjajar. Andi dan Budi harus berdampingan.
+        Ada berapa susunan?
+        \jawab{240}{$5! \times 2$.}
+  \item Sama seperti soal nomor 8, tetapi sekarang Andi dan Budi tidak boleh berdampingan.
+        \jawab{480}{$6! - 240$. Ini memakai cara ``hitung yang tidak diminta'' dari Topik 2.}
+  \item \textbf{(Antrean)} Tiga siswa putra dan tiga siswa putri antre berselang-seling
+        (putra, putri, putra, \dots{} atau putri, putra, putri, \dots). Ada berapa susunan?
+        \jawab{72}{Ada 2 pola. Setiap pola: putra $3!$, putri $3!$. Jadi $2 \times 6 \times 6$.}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item Lima orang duduk mengelilingi meja bundar. Ada berapa susunan?
+        \jawab{24}{$4!$.}
+  \item Dari angka 1, 2, 3, 4, 5 dibuat bilangan 5 digit tanpa angka berulang. Ada berapa
+        bilangan yang lebih dari 30.000?
+        \jawab{72}{Digit pertama 3, 4, atau 5, sisanya bebas: $3 \times 4!$.}
+  \item \textbf{(Kamus Ajaib)} Semua susunan huruf A, B, C, D, E ditulis berurutan seperti di
+        kamus: ABCDE, ABCED, dan seterusnya. CADEB ada di urutan ke berapa?
+        \jawab{52}{Yang diawali A ada 24, diawali B ada 24. Yang diawali CA: CABDE, CABED, CADBE,
+        CADEB. Jadi $48 + 4$.}
+  \item Empat buku Matematika dan tiga buku IPA (semuanya berbeda) disusun di rak. Buku dengan
+        pelajaran yang sama harus berkumpul. Ada berapa susunan?
+        \jawab{288}{$2! \times 4! \times 3!$.}
+  \item Lima siswa putra dan tiga siswa putri berbaris. Tidak boleh ada dua siswa putri yang
+        berdampingan. Ada berapa susunan?
+        \textit{(Petunjuk: susun putra dulu, lalu letakkan putri di sela-sela mereka.)}
+        \jawab{14.400}{Putra disusun $5! = 120$ cara. Lima putra membuat 6 sela (termasuk kedua ujung).
+        Tiga putri ditempatkan di 3 sela: $6 \times 5 \times 4 = 120$. Jadi $120 \times 120$.}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{15}
+  \item Buktikan bahwa banyak susunan huruf MATEMATIKA yang diawali huruf M sama dengan
+        $\frac{1}{5}$ dari banyak seluruh susunannya.
+        \jawab{bukti}{Seluruh susunan: $\frac{10!}{2! \times 3! \times 2!} = 151.200$.\\
+        Susunan yang diawali M: huruf M pertama dikunci di depan, sisa 9 huruf (M, A, A, A, T, T,
+        E, I, K) disusun: $\frac{9!}{3! \times 2!} = 30.240$.\\
+        Perbandingannya $\frac{30.240}{151.200} = \frac{1}{5}$. \hfill$\blacksquare$\\
+        \emph{Cara lain yang lebih cerdik: ada 10 huruf dan 2 di antaranya M. Kalau semua susunan
+        ditulis, setiap posisi huruf sama ``adilnya'', jadi huruf pertama adalah M pada
+        $\frac{2}{10} = \frac{1}{5}$ bagian dari semua susunan.}}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{16}
+  \item Huruf A, A, B, B, C, C disusun berjajar. Tentukan banyak susunan yang tidak memiliki dua
+        huruf sama yang berdampingan. Jelaskan caramu.
+        \jawab{30}{Semua susunan: $\frac{6!}{2! \times 2! \times 2!} = 90$. Kurangi yang
+        ``buruk''.\\
+        Susunan dengan AA berdampingan: ikat AA, sisa 5 unit (AA, B, B, C, C):
+        $\frac{5!}{2! \times 2!} = 30$. Sama untuk BB dan CC, jadi $3 \times 30 = 90$.\\
+        Tetapi susunan dengan AA dan BB sama-sama berdampingan terhitung dua kali. Banyaknya:
+        4 unit (AA, BB, C, C): $\frac{4!}{2!} = 12$. Ada 3 pasangan seperti ini, jadi $3 \times 12 = 36$.\\
+        Susunan dengan AA, BB, CC semuanya berdampingan: $3! = 6$.\\
+        Seperti Venn tiga lingkaran: yang buruk ada $90 - 36 + 6 = 60$. Jadi yang baik ada
+        $90 - 60 = 30$.}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Topik 4: Kombinasi (Memilih)}
+% ====================================================================
+
+\begin{catatanguru}
+Ayo Selidiki adalah inti topik ini. Pastikan siswa benar-benar mendaftar kedua daftar dan melihat
+bahwa setiap pasangan perwakilan muncul dua kali di daftar ketua--wakil.
+\end{catatanguru}
+
+\begin{selidiki}
+Ada 4 siswa: A, B, C, D.
+
+\textbf{(1)} Pilih \textbf{ketua dan wakil}. Tulis semua kemungkinannya (ketua ditulis dulu):
+
+AB, BA, AC, \rule{7cm}{0.4pt}
+
+\textbf{(2)} Pilih \textbf{2 perwakilan} untuk lomba. Tulis semua kemungkinannya:
+
+AB, AC, \rule{7cm}{0.4pt}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Ada berapa kemungkinan di daftar (1)? Di daftar (2)?
+    \item Kenapa daftar (2) tepat setengah dari daftar (1)?
+\end{enumerate}
+
+Pada daftar (1), AB dan BA berbeda (ketuanya beda). Pada daftar (2), AB dan BA sama saja.
+Jadi setiap pasangan di daftar (2) muncul dua kali di daftar (1). Memilih tanpa memedulikan
+urutan disebut \textbf{kombinasi}.
+\end{selidiki}
+
+\subsection*{Langkah 1: Rumus kombinasi}
+Banyak cara memilih $r$ benda dari $n$ benda (urutan tidak penting) ditulis $\C{n}{r}$:
+\[ \C{n}{r} = \frac{n \times (n-1) \times \dots \text{ (sebanyak $r$ faktor)}}{r!} \]
+
+\begin{contoh}
+\textbf{Contoh.} Dari 8 siswa dipilih 3 perwakilan. Ada berapa cara?
+
+\textit{Jawab:} $\C{8}{3} = \dfrac{8 \times 7 \times 6}{3 \times 2 \times 1} = \textbf{56}$.
+(Bandingkan dengan juara 1, 2, 3 yang ada 336 cara. Dibagi $3! = 6$ karena urutannya tidak penting.)
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Memilih 3 dari 6 siswa ada \kosong{} cara.
+    \item Nilai $\C{10}{2}$ adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Jabat tangan dan pertandingan}
+Banyak pasangan dari $n$ orang adalah $\C{n}{2} = \dfrac{n(n-1)}{2}$. Rumus ini dipakai untuk
+jabat tangan, pertandingan setengah kompetisi, dan garis yang menghubungkan dua titik.
+
+\begin{contoh}
+\textbf{Contoh.} Di pesta ada 10 orang. Setiap dua orang berjabat tangan sekali. Ada berapa
+jabat tangan?
+
+\textit{Jawab:} $\C{10}{2} = \dfrac{10 \times 9}{2} = \textbf{45}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Ada 8 tim, setiap dua tim bertanding sekali. Banyak pertandingannya \kosong.
+    \item Banyak diagonal segi-6 adalah \kosong. \quad (garis antar-titik sudut dikurangi sisi)
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: Memilih dari dua kelompok}
+Kalau memilih dari dua kelompok sekaligus, pilih dari masing-masing kelompok lalu
+\textbf{kalikan}. Untuk ``paling sedikit satu'', hitung semua dikurangi yang tidak diminta.
+
+\begin{contoh}
+\textbf{Contoh.} Dari 5 putra dan 4 putri dibentuk panitia berisi 2 putra dan 2 putri.
+Ada berapa cara?
+
+\textit{Jawab:} $\C{5}{2} \times \C{4}{2} = 10 \times 6 = \textbf{60}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Dari 3 putra dan 4 putri dipilih 1 putra dan 2 putri. Banyak caranya \kosong.
+    \item Dari 4 putra dan 3 putri dipilih 3 orang, paling sedikit 1 putri. Banyak caranya \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 4: Jalan di grid}
+Untuk berjalan dari pojok kiri bawah ke kanan atas dengan hanya melangkah ke kanan atau ke atas,
+hitung total langkahnya, lalu pilih langkah mana yang ``atas''.
+
+\begin{contoh}
+\textbf{Contoh.} Ada berapa jalan dengan 4 langkah ke kanan dan 3 langkah ke atas?
+
+\textit{Jawab:} Total 7 langkah, pilih 3 yang ``atas'': $\C{7}{3} = \textbf{35}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Banyak jalan dengan 2 langkah ke kanan dan 2 langkah ke atas \kosong.
+    \item Banyak jalan dengan 3 langkah ke kanan dan 2 langkah ke atas \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item Urutan penting (juara, jabatan): permutasi. Urutan tidak penting (tim, perwakilan): kombinasi.
+    \item $\C{n}{r}$ = (kalikan $r$ bilangan dari $n$ turun) dibagi $r!$.
+    \item Banyak pasangan dari $n$ orang: $\frac{n(n-1)}{2}$.
+    \item Jalan di grid: pilih langkah mana yang ``atas''.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: 20, 45. \quad Langkah 2: 28, 9. \quad Langkah 3: 18, 31.
+\quad Langkah 4: 6, 10.
+
+\newpage
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+  \item Hitunglah $\C{6}{2}$ dan $\C{7}{5}$.
+        \jawab{15 dan 21}{$\C{7}{5} = \C{7}{2}$, karena memilih 5 yang ikut sama dengan memilih 2 yang tidak ikut.}
+  \item \textbf{(Es Krim)} Toko es krim punya 5 rasa. Kamu boleh memilih 2 rasa berbeda.
+        Ada berapa pilihan?
+        \jawab{10}{$\C{5}{2}$.}
+  \item Dari 5 soal esai, siswa harus memilih 3 soal untuk dikerjakan. Ada berapa cara?
+        \jawab{10}{$\C{5}{3}$.}
+  \item \textbf{(Liga Futsal)} Ada 6 tim futsal. Setiap dua tim bertanding tepat satu kali.
+        Ada berapa pertandingan?
+        \jawab{15}{$\C{6}{2}$.}
+  \item Ada 7 titik dan tidak ada 3 titik yang segaris. Ada berapa garis yang bisa dibuat
+        melalui 2 titik?
+        \jawab{21}{$\C{7}{2}$.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+  \setcounter{enumi}{5}
+  \item Ada berapa diagonal pada segi-10?
+        \jawab{35}{Semua garis antar-titik sudut $\C{10}{2} = 45$, dikurangi 10 sisi.}
+  \item Ada 8 titik pada sebuah lingkaran. Ada berapa segitiga yang titik sudutnya dari
+        titik-titik itu?
+        \jawab{56}{$\C{8}{3}$.}
+  \item Dari 5 siswa putra dan 4 siswa putri akan dipilih tim berisi 3 orang, dengan paling
+        sedikit 1 putri. Ada berapa cara?
+        \jawab{74}{Semua tim $\C{9}{3} = 84$, dikurangi tim tanpa putri $\C{5}{3} = 10$.}
+  \item Ujian terdiri dari 10 soal dan siswa wajib mengerjakan 7 soal. Soal nomor 1, 2, dan 3
+        wajib dikerjakan. Ada berapa pilihan soal?
+        \jawab{35}{Sisa 4 soal dipilih dari 7 soal: $\C{7}{4}$.}
+  \item \textbf{(Jalan ke Sekolah)} Sekolah Dina berada 5 blok ke timur dan 3 blok ke utara
+        dari rumahnya. Dina hanya berjalan ke timur atau ke utara. Ada berapa rute?
+        \jawab{56}{8 langkah, pilih 3 langkah ke utara: $\C{8}{3}$.}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item Dalam sebuah pertemuan terjadi 66 jabat tangan, dan setiap dua orang berjabat tangan
+        tepat sekali. Berapa orang yang hadir?
+        \jawab{12}{$\frac{n(n-1)}{2} = 66$, jadi $n(n-1) = 132 = 12 \times 11$.}
+  \item Ada 5 titik pada garis $g$ dan 4 titik pada garis $h$, dan kedua garis itu sejajar.
+        Ada berapa segitiga yang bisa dibentuk dari titik-titik tersebut?
+        \jawab{70}{Dua titik dari $g$ dan satu dari $h$: $10 \times 4 = 40$. Dua titik dari $h$
+        dan satu dari $g$: $6 \times 5 = 30$.}
+  \item Ada berapa persegi panjang (termasuk persegi) pada papan $4 \times 4$ kotak?
+        \jawab{100}{Persegi panjang ditentukan oleh 2 dari 5 garis mendatar dan 2 dari 5 garis
+        tegak: $10 \times 10$.}
+  \item Ada berapa bilangan 3 digit yang digitnya naik dari kiri ke kanan, seperti 147 atau 359?
+        \jawab{84}{Pilih 3 digit berbeda dari 1--9. Setiap pilihan hanya punya satu susunan
+        yang naik: $\C{9}{3}$.}
+  \item \textbf{(Bagi Permen)} Enam permen yang sama dibagikan kepada 3 anak, dan setiap anak
+        mendapat paling sedikit 1 permen. Ada berapa cara?
+        \textit{(Petunjuk: jajarkan 6 permen, ada 5 celah di antaranya. Taruh 2 sekat.)}
+        \jawab{10}{$\C{5}{2}$. Contoh: $\circ\circ|\circ|\circ\circ\circ$ artinya (2, 1, 3).}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{15}
+  \item Buktikan bahwa banyak diagonal pada segi-$n$ adalah $\dfrac{n(n-3)}{2}$.
+        \jawab{bukti}{Cara 1: Setiap dua titik sudut membentuk garis, jadi ada $\C{n}{2} =
+        \frac{n(n-1)}{2}$ garis. Dari garis-garis itu, $n$ di antaranya adalah sisi. Jadi banyak
+        diagonal $\frac{n(n-1)}{2} - n = \frac{n(n-1) - 2n}{2} = \frac{n(n-3)}{2}$.\\
+        Cara 2: Dari setiap titik sudut bisa ditarik diagonal ke semua titik sudut lain kecuali
+        dirinya sendiri dan dua tetangganya, yaitu $n - 3$ diagonal. Untuk $n$ titik sudut:
+        $n(n-3)$. Setiap diagonal terhitung dua kali (dari kedua ujungnya), jadi dibagi 2.
+        \hfill$\blacksquare$}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{16}
+  \item Pada sebuah lingkaran terdapat 8 titik. Setiap dua titik dihubungkan dengan tali busur,
+        dan tidak ada tiga tali busur yang berpotongan di satu titik yang sama di dalam lingkaran.
+        Tentukan banyak titik potong tali busur di dalam lingkaran. Jelaskan caramu.
+        \jawab{70}{Kunci soal ini adalah melihat bahwa \emph{setiap titik potong berasal dari
+        tepat 4 titik di lingkaran}. Dua tali busur berpotongan di dalam lingkaran hanya jika
+        keempat ujungnya berbeda dan berselang-seling. Sebaliknya, dari 4 titik di lingkaran
+        ada tepat satu cara memasangkan mereka menjadi dua tali busur yang berpotongan (yaitu
+        kedua diagonal segi empatnya).\\
+        Jadi setiap pilihan 4 titik menghasilkan tepat 1 titik potong, dan setiap titik potong
+        berasal dari tepat 1 pilihan 4 titik. Banyak titik potong $= \C{8}{4} = 70$.}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Topik 5: Prinsip Sarang Merpati}
+% ====================================================================
+
+\begin{catatanguru}
+Ayo Selidiki bisa diperagakan dengan pensil dan kotak sungguhan. Untuk soal ``paling sedikit harus
+mengambil berapa'', selalu tanyakan ``Kalau kamu sangat sial, apa yang terambil?'' Untuk soal
+pembuktian, biasakan siswa menyebut apa merpatinya dan apa sarangnya.
+\end{catatanguru}
+
+\begin{selidiki}
+Masukkan \textbf{5 pensil} ke dalam \textbf{4 kotak} (boleh ada kotak yang kosong). Coba tiga
+cara yang berbeda dan tulis isi setiap kotak.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|*{4}{>{\centering\arraybackslash}p{1.4cm}|}}
+\hline
+ & Kotak 1 & Kotak 2 & Kotak 3 & Kotak 4\\ \hline
+Cara 1 & 2 & 1 & 1 & 1\\ \hline
+Cara 2 & & & & \\ \hline
+Cara 3 & & & & \\ \hline
+\end{tabular}
+\end{center}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Di setiap cara, apakah selalu ada kotak yang berisi 2 pensil atau lebih?
+    \item Bisakah kamu membuat semua kotak berisi paling banyak 1 pensil? Kenapa?
+    \item Kalau ada 9 pensil dan 4 kotak, apakah pasti ada kotak yang berisi 3 pensil atau lebih?
+\end{enumerate}
+
+Kalau benda lebih banyak dari kotaknya, pasti ada kotak yang berisi lebih dari satu. Ide
+sederhana ini disebut \textbf{Prinsip Sarang Merpati}: bendanya ``merpati'', kotaknya ``sarang''.
+\end{selidiki}
+
+\subsection*{Langkah 1: Merpati dan sarang}
+Kalau merpatinya lebih banyak dari sarangnya, pasti ada sarang yang berisi paling sedikit
+2 merpati. Kuncinya: tentukan dulu apa merpatinya dan apa sarangnya.
+
+\begin{contoh}
+\textbf{Contoh.} Buktikan bahwa di antara 13 orang, pasti ada 2 orang yang lahir di bulan yang sama.
+
+\textit{Jawab:} Merpatinya 13 orang, sarangnya 12 bulan. Karena $13 > 12$, pasti ada bulan yang
+``dihuni'' paling sedikit 2 orang.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Paling sedikit berapa siswa supaya pasti ada 2 siswa yang angka terakhir nomor absennya
+          sama? \kosong
+    \item Ada 27 siswa di kelas. Apakah pasti ada 2 siswa yang huruf awal namanya sama?
+          (Ada 26 huruf.) \kosong
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Kasus paling sial}
+Untuk soal ``paling sedikit harus mengambil berapa supaya \textbf{pasti}\dots'', bayangkan kamu
+sedang sangat sial, lalu tambah 1.
+
+\begin{contoh}
+\textbf{Contoh.} Di laci gelap ada 10 kaos kaki merah dan 10 kaos kaki biru. Paling sedikit
+berapa kaos kaki harus diambil supaya pasti dapat sepasang yang warnanya sama?
+
+\textit{Jawab:} Paling sial: ambil 2, dapat merah dan biru. Kaos kaki ketiga pasti sama dengan
+salah satunya. Jadi jawabannya $2 + 1 = \textbf{3}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Kotak berisi bola dengan 4 warna. Supaya pasti dapat 2 bola sewarna, ambil \kosong{} bola.
+    \item Kotak berisi 3 bola merah dan 5 bola biru. Supaya pasti dapat 1 bola biru, ambil
+          \kosong{} bola.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: Bentuk umum}
+Kalau $N$ benda dimasukkan ke $k$ kotak, pasti ada kotak yang berisi paling sedikit
+$N \div k$ benda, \textbf{dibulatkan ke atas}.
+
+\begin{contoh}
+\textbf{Contoh.} Di kelas ada 30 siswa. Paling sedikit berapa siswa yang pasti lahir di bulan
+yang sama?
+
+\textit{Jawab:} $30 \div 12 = 2{,}5$, dibulatkan ke atas menjadi \textbf{3}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item 50 kelereng dimasukkan ke 7 kotak. Pasti ada kotak berisi paling sedikit \kosong.
+    \item Ada 100 siswa. Pasti ada paling sedikit \kosong{} siswa yang lahir di bulan yang sama.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 4: Sarang berupa sisa pembagian}
+Di olimpiade, sarang yang paling sering dipakai adalah \textbf{sisa pembagian} (Bab 1, Topik 3).
+
+\begin{contoh}
+\textbf{Contoh.} Buktikan bahwa di antara 6 bilangan bulat sembarang, pasti ada dua bilangan
+yang selisihnya habis dibagi 5.
+
+\textit{Jawab:} Sisa pembagian oleh 5 hanya ada 5 kemungkinan (0, 1, 2, 3, 4). Ini sarangnya.
+Bilangannya 6, ini merpatinya. Jadi pasti ada dua bilangan dengan sisa yang sama, dan selisih
+keduanya habis dibagi 5.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Paling sedikit berapa bilangan supaya pasti ada dua yang selisihnya habis dibagi 3? \kosong
+    \item Paling sedikit berapa bilangan supaya pasti ada dua yang selisihnya habis dibagi 4? \kosong
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item Merpati lebih banyak dari sarang: pasti ada sarang berisi 2 atau lebih.
+    \item Tentukan dulu apa merpatinya dan apa sarangnya.
+    \item ``Paling sedikit harus mengambil'': kasus paling sial, lalu tambah 1.
+    \item $N$ benda di $k$ kotak: ada kotak berisi paling sedikit $N \div k$ (dibulatkan ke atas).
+    \item Sarang favorit di olimpiade: sisa pembagian.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: 11, ya. \quad Langkah 2: 5, 4. \quad Langkah 3: 8, 9.
+\quad Langkah 4: 4, 5.
+
+\newpage
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+  \item Paling sedikit berapa orang supaya pasti ada 2 orang yang lahir di hari (Senin--Minggu)
+        yang sama?
+        \jawab{8}{7 hari sebagai sarang, jadi butuh $7 + 1$ orang.}
+  \item Sebuah kotak berisi 5 bola merah, 5 putih, dan 5 hijau. Paling sedikit berapa bola harus
+        diambil (tanpa melihat) supaya pasti ada 2 bola yang warnanya sama?
+        \jawab{4}{Paling sial: merah, putih, hijau. Ditambah 1.}
+  \item Di kelas berisi 30 siswa, nilai ulangan berupa bilangan bulat 0 sampai 10. Paling sedikit
+        berapa siswa yang pasti mendapat nilai sama?
+        \jawab{3}{Ada 11 kemungkinan nilai (0 sampai 10 itu 11 bilangan). $30 \div 11$ dibulatkan ke atas.}
+  \item Paling sedikit berapa orang supaya pasti ada 2 orang yang ulang tahunnya di tanggal dan
+        bulan yang sama? (29 Februari juga dihitung.)
+        \jawab{367}{Ada 366 kemungkinan tanggal.}
+  \item Jelaskan kenapa di antara 3 bilangan bulat sembarang, pasti ada 2 bilangan yang
+        jumlahnya genap.
+        \jawab{bukti}{Sarangnya ganjil dan genap (2 sarang), merpatinya 3 bilangan. Jadi ada dua
+        bilangan yang sama ganjil-genapnya, dan jumlah keduanya genap.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+  \setcounter{enumi}{5}
+  \item Sebuah kotak berisi 8 bola merah, 6 biru, dan 3 hijau. Paling sedikit berapa bola harus
+        diambil supaya pasti ada 3 bola yang warnanya sama?
+        \jawab{7}{Paling sial: 2 merah, 2 biru, 2 hijau. Ditambah 1.}
+  \item Kotaknya sama seperti nomor 6. Paling sedikit berapa bola harus diambil supaya pasti
+        mendapat 2 bola biru?
+        \jawab{13}{Paling sial: 8 merah, 3 hijau, 1 biru. Ditambah 1. Banyak siswa menjawab 4.}
+  \item \textbf{(Lemari Gelap)} Di lemari ada 12 kaos kaki hitam dan 12 kaos kaki putih yang
+        tercampur. Paling sedikit berapa kaos kaki harus diambil supaya pasti mendapat sepasang
+        kaos kaki hitam?
+        \jawab{14}{Paling sial: 12 putih dan 1 hitam. Ditambah 1.}
+  \item Jelaskan kenapa di antara 11 bilangan bulat sembarang, pasti ada 2 bilangan yang
+        selisihnya habis dibagi 10.
+        \jawab{bukti}{Sarangnya angka satuan (0--9), ada 10. Bilangannya 11, jadi ada dua dengan
+        angka satuan sama, dan selisihnya berakhiran 0.}
+  \item Sebuah sekolah memiliki 1000 siswa. Paling sedikit berapa siswa yang pasti ulang
+        tahunnya di tanggal dan bulan yang sama?
+        \jawab{3}{$1000 \div 366 = 2{,}7\ldots$, dibulatkan ke atas.}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item Dari bilangan 1, 2, 3, \dots, 10, paling sedikit berapa bilangan harus dipilih supaya
+        pasti ada 2 bilangan yang jumlahnya 11?
+        \jawab{6}{Sarangnya pasangan $\{1,10\}, \{2,9\}, \{3,8\}, \{4,7\}, \{5,6\}$. Memilih 1--5
+        masih gagal, jadi butuh 6.}
+  \item Lima titik diletakkan di dalam persegi berukuran $2 \times 2$. Buktikan bahwa pasti ada
+        2 titik yang jaraknya tidak lebih dari $\sqrt{2}$.
+        \jawab{bukti}{Bagi persegi menjadi 4 persegi kecil $1 \times 1$. Ada 5 titik, jadi dua titik
+        berada di persegi kecil yang sama. Jarak terjauh di dalamnya adalah diagonal, yaitu $\sqrt{2}$.}
+  \item Paling sedikit berapa bilangan harus dipilih dari 1 sampai 100 supaya pasti ada 2 bilangan
+        yang selisihnya habis dibagi 7?
+        \jawab{8}{Sarangnya sisa bagi 7 (ada 7). Memilih 1--7 masih gagal.}
+  \item Buktikan bahwa di kelas berisi 40 siswa, pasti ada paling sedikit 4 siswa yang lahir di
+        bulan yang sama.
+        \jawab{bukti}{Kalau setiap bulan paling banyak 3 siswa, totalnya paling banyak 36. Padahal ada 40.}
+  \item Di sebuah pesta yang dihadiri beberapa orang, ada yang saling berjabat tangan. Buktikan
+        bahwa pasti ada 2 orang yang banyak jabat tangannya sama.
+        \jawab{bukti}{Misal ada $n$ orang. Banyak jabat tangan seseorang antara 0 dan $n-1$.
+        Tapi 0 dan $n-1$ tidak mungkin muncul bersamaan: kalau ada orang yang menjabat semua
+        orang, tidak ada yang 0. Jadi hanya ada $n-1$ kemungkinan untuk $n$ orang.}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{15}
+  \item Buktikan bahwa dari 5 bilangan bulat sembarang, pasti ada 3 bilangan yang jumlahnya
+        habis dibagi 3.
+        \jawab{bukti}{Lihat sisa setiap bilangan jika dibagi 3: 0, 1, atau 2 (3 sarang).\\
+        \emph{Kasus 1:} ketiga sisa (0, 1, 2) muncul. Ambil satu bilangan dari setiap sisa.
+        Jumlah sisanya $0 + 1 + 2 = 3$, jadi jumlahnya habis dibagi 3.\\
+        \emph{Kasus 2:} paling banyak 2 macam sisa yang muncul. Lima bilangan masuk ke paling
+        banyak 2 sarang, jadi ada sarang yang berisi paling sedikit 3 bilangan ($5 \div 2$
+        dibulatkan ke atas). Tiga bilangan dengan sisa sama $r$ jumlahnya bersisa $3r$, yang
+        habis dibagi 3.\\
+        Di kedua kasus selalu ada 3 bilangan yang jumlahnya habis dibagi 3. \hfill$\blacksquare$}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{16}
+  \item Tentukan bilangan $n$ terkecil sehingga dari setiap $n$ bilangan yang dipilih dari
+        $1, 2, \dots, 20$, pasti ada dua bilangan yang salah satunya membagi yang lain.
+        Buktikan jawabanmu.
+        \jawab{$n = 11$}{\emph{10 bilangan belum cukup:} pilih 11, 12, \dots, 20. Tidak ada yang
+        membagi yang lain, karena kelipatan terkecil dari bilangan $\ge 11$ (selain dirinya)
+        sudah $\ge 22$.\\
+        \emph{11 bilangan pasti cukup:} setiap bilangan bisa ditulis sebagai
+        $2^k \times (\text{bilangan ganjil})$, misalnya $12 = 2^2 \times 3$. Bagian ganjilnya
+        adalah salah satu dari 1, 3, 5, \dots, 19, ada 10 kemungkinan (sarang). Dari 11 bilangan,
+        pasti ada dua dengan bagian ganjil yang sama, misalnya $2^a \times m$ dan $2^b \times m$
+        dengan $a < b$. Maka yang pertama membagi yang kedua. \hfill$\blacksquare$}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Topik 6: Peluang}
+% ====================================================================
+
+\begin{catatanguru}
+Kalau ada dadu, mainkan teka-teki Rani dan Doni sekitar 30 kali dan catat hasilnya di papan.
+Kesalahan yang sering muncul: menganggap jumlah dua dadu (2 sampai 12) sama-sama mungkin.
+Tabel di Ayo Selidiki adalah cara terbaik untuk meluruskannya.
+\end{catatanguru}
+
+\begin{selidiki}
+Dua dadu dilempar, lalu mata dadunya dijumlahkan. Lengkapi tabel jumlahnya.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|*{6}{>{\centering\arraybackslash}p{0.8cm}|}}
+\hline
+$+$ & 1 & 2 & 3 & 4 & 5 & 6\\ \hline
+1 & 2 & 3 & 4 & 5 & 6 & 7\\ \hline
+2 & 3 & & & & & \\ \hline
+3 & & & & & & \\ \hline
+4 & & & & & & \\ \hline
+5 & & & & & & \\ \hline
+6 & & & & & & \\ \hline
+\end{tabular}
+\end{center}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Ada berapa kotak seluruhnya?
+    \item Jumlah berapa yang paling sering muncul? Berapa kali jumlah 7 muncul? Jumlah 12?
+    \item Rani menang kalau jumlahnya 7, Doni menang kalau jumlahnya 12. Apakah adil?
+\end{enumerate}
+
+Ada 36 hasil yang sama-sama mungkin. Jumlah 7 muncul 6 kali, jumlah 12 hanya sekali. Jadi
+peluang Rani menang $\frac{6}{36}$, sedangkan Doni $\frac{1}{36}$. Tidak adil!
+\end{selidiki}
+
+\subsection*{Langkah 1: Rumus peluang}
+\[ \text{Peluang} = \frac{\text{banyak hasil yang diharapkan}}{\text{banyak semua hasil yang mungkin}} \]
+Peluang selalu bernilai antara 0 (mustahil) dan 1 (pasti terjadi).
+
+\begin{contoh}
+\textbf{Contoh.} Sebuah dadu dilempar. Berapa peluang muncul bilangan prima?
+
+\textit{Jawab:} Bilangan primanya 2, 3, 5 (3 hasil) dari 6 hasil. Peluangnya
+$\frac{3}{6} = \textbf{$\frac{1}{2}$}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Kartu bernomor 1 sampai 10, diambil satu. Peluang terambil bilangan prima \kosong.
+    \item Satu huruf diambil dari kata MATEMATIKA. Peluang terambil huruf A \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Dua dadu}
+Untuk dua dadu, selalu gunakan tabel 36 hasil di Ayo Selidiki. Jangan menganggap jumlah 2 sampai
+12 sama-sama mungkin.
+
+\begin{contoh}
+\textbf{Contoh.} Dua dadu dilempar. Berapa peluang jumlahnya 7?
+
+\textit{Jawab:} Dari tabel, jumlah 7 muncul 6 kali. Peluangnya $\frac{6}{36} = \textbf{$\frac{1}{6}$}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Peluang jumlah dua dadu sama dengan 4 adalah \kosong.
+    \item Peluang jumlah dua dadu kurang dari 5 adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: Hitung yang tidak diminta}
+Peluang tidak terjadi $= 1 -$ peluang terjadi. Cocok untuk soal ``paling sedikit satu''.
+
+\begin{contoh}
+\textbf{Contoh.} Tiga koin dilempar. Berapa peluang muncul paling sedikit satu Gambar?
+
+\textit{Jawab:} Semua hasil $2 \times 2 \times 2 = 8$. Yang tidak ada Gambar sama sekali hanya
+AAA (1 hasil). Peluangnya $1 - \frac{1}{8} = \textbf{$\frac{7}{8}$}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Dua dadu dilempar. Peluang muncul paling sedikit satu angka 6 adalah \kosong.
+    \item Empat koin dilempar. Peluang muncul paling sedikit satu Angka adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 4: Peluang dengan kombinasi}
+Kalau mengambil beberapa benda sekaligus, hitung banyak caranya dengan kombinasi (Topik 4).
+
+\begin{contoh}
+\textbf{Contoh.} Dari kantong berisi 3 bola merah dan 2 bola putih diambil 2 bola sekaligus.
+Berapa peluang keduanya merah?
+
+\textit{Jawab:} Semua cara mengambil 2 dari 5 bola: $\C{5}{2} = 10$. Cara mengambil 2 merah:
+$\C{3}{2} = 3$. Peluangnya \textbf{$\frac{3}{10}$}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Kantong berisi 4 bola merah dan 2 putih, diambil 2 sekaligus. Peluang keduanya putih \kosong.
+    \item Dari 3 putra dan 2 putri dipilih 2 orang. Peluang terpilih 1 putra dan 1 putri \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item Peluang = banyak hasil yang diharapkan dibagi banyak semua hasil.
+    \item Dua dadu: gunakan tabel 36 hasil.
+    \item Peluang tidak terjadi $= 1 -$ peluang terjadi.
+    \item Mengambil beberapa benda sekaligus: hitung dengan kombinasi.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: $\frac{2}{5}$, $\frac{3}{10}$. \quad Langkah 2:
+$\frac{1}{12}$, $\frac{1}{6}$. \quad Langkah 3: $\frac{11}{36}$, $\frac{15}{16}$. \quad
+Langkah 4: $\frac{1}{15}$, $\frac{3}{5}$.
+
+\newpage
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+  \item Sebuah dadu dilempar. Berapa peluang muncul mata dadu genap?
+        \jawab{$\frac{1}{2}$}{$\frac{3}{6}$.}
+  \item Dalam kantong ada 3 kelereng merah, 5 biru, dan 2 hijau. Diambil 1 kelereng. Berapa peluang
+        terambil kelereng biru?
+        \jawab{$\frac{1}{2}$}{$\frac{5}{10}$.}
+  \item Kartu bernomor 1 sampai 20 dikocok, lalu diambil satu. Berapa peluang terambil kartu
+        kelipatan 3?
+        \jawab{$\frac{3}{10}$}{Ada 6 kartu: 3, 6, 9, 12, 15, 18.}
+  \item Dua koin dilempar. Berapa peluang keduanya menunjukkan sisi Gambar?
+        \jawab{$\frac{1}{4}$}{Hasilnya AA, AG, GA, GG.}
+  \item Satu huruf diambil secara acak dari kata OLIMPIADE. Berapa peluang terambil huruf vokal?
+        \jawab{$\frac{5}{9}$}{Vokalnya O, I, I, A, E.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+  \setcounter{enumi}{5}
+  \item Dua dadu dilempar. Berapa peluang jumlah mata dadunya 10?
+        \jawab{$\frac{1}{12}$}{(4,6), (5,5), (6,4): $\frac{3}{36}$.}
+  \item Dua dadu dilempar. Berapa peluang kedua mata dadu sama?
+        \jawab{$\frac{1}{6}$}{$\frac{6}{36}$.}
+  \item Dua dadu dilempar. Berapa peluang hasil kali kedua mata dadu genap?
+        \jawab{$\frac{3}{4}$}{Hasil kali ganjil hanya jika keduanya ganjil: $3 \times 3 = 9$ hasil.
+        Jadi $1 - \frac{9}{36}$. Ini memakai paritas dari Bab 1.}
+  \item Dari kantong berisi 4 bola merah dan 6 bola biru diambil 3 bola sekaligus. Berapa peluang
+        paling sedikit satu bola merah?
+        \jawab{$\frac{5}{6}$}{Peluang semua biru $\frac{\C{6}{3}}{\C{10}{3}} = \frac{20}{120} = \frac{1}{6}$.}
+  \item Sebuah bilangan 2 digit dipilih secara acak. Berapa peluang bilangan itu habis dibagi 7?
+        \jawab{$\frac{13}{90}$}{Ada 90 bilangan 2 digit, dan kelipatan 7 dari 14 sampai 98 ada 13.}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item Tiga dadu dilempar. Berapa peluang jumlah mata dadunya 5?
+        \jawab{$\frac{1}{36}$}{Semua hasil 216. Jumlah 5 didapat dari susunan (1,1,3) sebanyak 3 dan
+        (1,2,2) sebanyak 3. Jadi $\frac{6}{216}$.}
+  \item Huruf-huruf kata KATAK disusun secara acak. Berapa peluang kedua huruf K berdampingan?
+        \jawab{$\frac{2}{5}$}{Semua susunan 30. Kalau KK diikat: $\frac{4!}{2!} = 12$.}
+  \item Empat orang, termasuk Andi dan Budi, duduk berjajar secara acak. Berapa peluang Andi dan
+        Budi duduk berdampingan?
+        \jawab{$\frac{1}{2}$}{$\frac{3! \times 2}{4!} = \frac{12}{24}$.}
+  \item Dua dadu dilempar. Berapa peluang angka satuan dari hasil kali kedua mata dadu adalah 6?
+        \jawab{$\frac{1}{6}$}{$1 \times 6$, $6 \times 1$, $2 \times 3$, $3 \times 2$, $4 \times 4$,
+        $6 \times 6$: ada 6 hasil.}
+  \item \textbf{(Hari Lahir)} Ada 3 orang. Berapa peluang paling sedikit 2 orang di antaranya lahir
+        di hari (Senin--Minggu) yang sama?
+        \jawab{$\frac{19}{49}$}{Semua kemungkinan $7^3 = 343$. Ketiganya beda hari:
+        $7 \times 6 \times 5 = 210$. Jadi $1 - \frac{210}{343} = \frac{133}{343} = \frac{19}{49}$.}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{15}
+  \item Sebuah koin dilempar $n$ kali ($n \ge 1$). Buktikan bahwa peluang banyaknya Gambar genap
+        (termasuk 0) sama dengan $\frac{1}{2}$.
+        \jawab{bukti}{Pasangkan setiap hasil dengan hasil yang sama persis kecuali lemparan
+        \emph{terakhir} dibalik (A menjadi G atau sebaliknya). Contoh untuk $n = 3$: AGA dipasangkan
+        dengan AGG.\\
+        Dalam setiap pasangan, banyak Gambar berbeda tepat 1, jadi yang satu genap dan yang lain
+        ganjil. Semua $2^n$ hasil terbagi habis menjadi pasangan-pasangan seperti ini. Jadi hasil
+        dengan banyak Gambar genap tepat setengah dari semua hasil, dan peluangnya $\frac{1}{2}$.
+        \hfill$\blacksquare$}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+  \setcounter{enumi}{16}
+  \item Tiga dadu dilempar. Tentukan peluang bahwa mata dadu \textbf{terbesar} adalah 4.
+        Jelaskan caramu.
+        \jawab{$\frac{37}{216}$}{Semua hasil $6^3 = 216$.\\
+        ``Terbesar adalah 4'' artinya semua dadu paling besar 4, \emph{dan} ada paling sedikit satu
+        dadu yang tepat 4.\\
+        Semua dadu paling besar 4: setiap dadu punya 4 pilihan (1--4), jadi $4^3 = 64$ hasil.
+        Dari hasil ini, yang tidak memuat 4 sama sekali (semua dadu paling besar 3) ada $3^3 = 27$.
+        Jadi yang terbesarnya tepat 4 ada $64 - 27 = 37$.\\
+        Peluangnya $\frac{37}{216}$.}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Soal Campuran}
+% ====================================================================
+
+Soal-soal di bawah ini sengaja tidak diberi keterangan topik, sama seperti soal olimpiade
+sungguhan. Sebelum menghitung, tanya dulu ke dirimu sendiri: urutannya penting atau tidak?
+Ada kata ``paling sedikit'' atau tidak? Waktu mengerjakan 60 menit.
+
+\begin{enumerate}
+  \item Ada berapa bilangan 4 digit yang semua digitnya genap?
+        \jawab{500}{$4 \times 5 \times 5 \times 5$ (ribuan tidak boleh 0).}
+  \item Ada 7 titik pada sebuah lingkaran. Ada berapa segi empat yang titik sudutnya dari
+        titik-titik itu?
+        \jawab{35}{$\C{7}{4}$.}
+  \item Ada berapa susunan huruf dari kata ANANDA?
+        \jawab{60}{$\frac{6!}{3! \times 2!}$.}
+  \item Paling sedikit berapa siswa harus dikumpulkan supaya pasti ada 3 siswa yang huruf awal
+        namanya sama? (Ada 26 huruf.)
+        \jawab{53}{Paling sial: setiap huruf dipakai 2 siswa, yaitu 52. Ditambah 1.}
+  \item Ada berapa bilangan dari 1 sampai 500 yang habis dibagi 4 atau 6?
+        \jawab{167}{$125 + 83 - 41$. Irisannya kelipatan 12, bukan 24.}
+  \item Dua dadu dilempar. Berapa peluang jumlah mata dadunya bilangan prima?
+        \jawab{$\frac{5}{12}$}{Jumlah 2, 3, 5, 7, 11 muncul $1 + 2 + 4 + 6 + 2 = 15$ kali.}
+  \item Delapan siswa dibagi menjadi dua tim berisi 4 orang. Tim tidak diberi nama.
+        Ada berapa cara?
+        \jawab{35}{$\C{8}{4} = 70$, dibagi 2.}
+  \item \textbf{(Tangga Sekolah)} Doni menaiki 6 anak tangga. Setiap langkah ia naik 1 atau 2 anak
+        tangga. Ada berapa cara?
+        \jawab{13}{Mulai dari tangga kecil: 1, 2, 3, 5, 8, 13. Setiap nilai adalah jumlah dua
+        nilai sebelumnya.}
+  \item Ada berapa bilangan 3 digit yang digitnya berbeda dan habis dibagi 5?
+        \jawab{136}{Satuan 0: 72. Satuan 5: 64.}
+  \item \textbf{(Turnamen Gugur)} Ada 64 tim dalam turnamen sistem gugur. Tim yang kalah langsung
+        tersingkir. Ada berapa pertandingan sampai juaranya ditemukan?
+        \jawab{63}{Setiap pertandingan menyingkirkan 1 tim, dan 63 tim harus tersingkir.}
+\end{enumerate}
+
+\end{document}

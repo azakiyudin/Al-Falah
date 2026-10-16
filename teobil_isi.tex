@@ -1,0 +1,1312 @@
+% ====================================================================
+%  ISI MODUL BAB 1: TEORI BILANGAN
+%  Jangan dikompilasi langsung. Kompilasi salah satu dari:
+%    teobil_siswa.tex  -> Edisi Siswa
+%    teobil_guru.tex   -> Edisi Guru (ada catatan mengajar & pembahasan)
+% ====================================================================
+\makeatletter
+\@ifundefined{ifguru}{\newif\ifguru}{}
+\makeatother
+
+\documentclass[11pt,a4paper]{article}
+\input{gaya}
+
+\title{\textbf{Modul Pembinaan Olimpiade Matematika SMP\\Bab 1: Teori Bilangan Dasar}}
+\author{\ifguru Edisi Guru\else Bahan Ajar Siswa (Kelas 7, 8, 9)\fi}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{tcolorbox}[title={Halo Calon Sang Juara!}]
+Selamat datang di dunia olimpiade matematika! Di sini, kamu tidak dinilai dari seberapa cepat
+kamu menghitung atau seberapa banyak rumus yang kamu hafal. Di sini, kamu dinilai dari
+\textbf{cara kamu berpikir}. Jangan takut kalau kamu tidak tahu rumusnya, karena banyak soal
+olimpiade bisa dipecahkan hanya dengan logika sehari-hari. Selamat mengeksplorasi!
+\end{tcolorbox}
+
+\textbf{Cara memakai modul ini.} Setiap topik dimulai dengan kegiatan \textbf{Ayo Selidiki},
+lalu dibagi menjadi beberapa langkah kecil. Di setiap langkah ada contoh, lalu kamu langsung
+mencoba sendiri di kotak \textbf{Sekarang Giliranmu}. Di akhir topik ada latihan soal dari
+Level 1 sampai Level 5.
+
+\ifguru
+\begin{catatanguru}
+\textbf{Rencana pertemuan (90 menit per pertemuan):} satu topik untuk satu pertemuan, lalu
+satu pertemuan terakhir untuk Soal Campuran sebagai tes kecil.
+
+\textbf{Saran umum.} Biarkan siswa mengerjakan Ayo Selidiki sendiri dulu (10--15 menit) sebelum
+menjelaskan. Kotak Giliranmu dikerjakan langsung di kelas. Siswa kelas 7 cukup sampai Level 2;
+yang cepat paham lanjut ke Level 3--5.
+
+\textbf{Level 4 dan 5} adalah soal uraian. Nilailah dari kelengkapan alasan, bukan hanya
+jawaban akhir. Contoh tulisan bukti yang lengkap ada di kotak jawaban.
+\end{catatanguru}
+\fi
+
+\newpage
+% ====================================================================
+\section*{Topik 1: Paritas (Logika Ganjil-Genap)}
+% ====================================================================
+
+\begin{catatanguru}
+Biarkan siswa mencoba teka-teki uang di akhir Ayo Selidiki sampai mereka yakin memang tidak bisa.
+Ingatkan bahwa 0 termasuk bilangan genap.
+\end{catatanguru}
+
+\begin{selidiki}
+Hitung, lalu tulis apakah hasilnya \textbf{ganjil} atau \textbf{genap}.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|*{6}{>{\centering\arraybackslash}p{1.3cm}|}}
+\hline
+Hitungan & $3 + 5$ & $4 + 6$ & $7 + 2$ & $3 \times 5$ & $4 \times 7$ & $2 \times 6$\\ \hline
+Ganjil/Genap? & & & & & & \\ \hline
+\end{tabular}
+\end{center}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Kapan hasil penjumlahan dua bilangan menjadi ganjil?
+    \item Kapan hasil perkalian dua bilangan menjadi genap?
+    \item Kamu jajan dan harus membayar pas \textbf{sepuluh ribu}. Kamu hanya punya lembaran
+          lima ribu dan seribu. Bisakah kamu membayar dengan \textbf{tepat 3 lembar}?
+\end{enumerate}
+
+Kalau kamu menjawab ``tidak bisa'' pada nomor 3, kamu benar! Lima ribu dan seribu sama-sama
+ganjil. Jumlah 3 bilangan ganjil selalu ganjil, padahal sepuluh ribu genap. Sifat ganjil-genap
+seperti ini disebut \textbf{paritas}.
+\end{selidiki}
+
+\subsection*{Langkah 1: Aturan ganjil-genap}
+Ganjil + ganjil = genap, genap + genap = genap, ganjil + genap = ganjil.
+Ganjil $\times$ ganjil = ganjil, dan bilangan apa pun dikali genap hasilnya genap.
+
+Satu hal penting: \textbf{bilangan genap tidak mengubah ganjil-genapnya hasil penjumlahan}.
+Jadi cukup hitung ada berapa bilangan ganjil.
+
+\begin{contoh}
+\textbf{Contoh.} Apakah $1 + 2 + 3 + \dots + 20$ ganjil atau genap?
+
+\textit{Jawab:} Bilangan ganjilnya 1, 3, 5, \dots, 19, ada 10 buah. Jumlah 10 bilangan ganjil
+hasilnya genap. Jadi jawabannya \textbf{genap}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item $11 + 22 + 33 + 44 + 55$ adalah bilangan \kosong.
+    \item $3 \times 5 \times 7 + 2$ adalah bilangan \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Memakai huruf}
+Di olimpiade, sering kali bilangannya tidak diketahui dan diganti huruf. Kita tetap bisa
+menentukan ganjil-genapnya.
+
+\begin{contoh}
+\textbf{Contoh.} Jika $n$ bilangan bulat, apakah $n \times (n+1)$ selalu genap?
+
+\textit{Jawab:} $n$ dan $n+1$ adalah dua bilangan berurutan, jadi salah satunya pasti genap.
+Bilangan apa pun dikali genap hasilnya genap. Jadi \textbf{selalu genap}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Jika $x$ ganjil, maka $x^2 + x$ adalah bilangan \kosong.
+    \item Jika $a$ genap dan $b$ ganjil, maka $a \times b + b$ adalah bilangan \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: Membuktikan sesuatu tidak mungkin}
+Paritas sering dipakai untuk menunjukkan bahwa sesuatu \textbf{mustahil}, seperti teka-teki
+uang tadi.
+
+\begin{contoh}
+\textbf{Contoh.} Bisakah 7 bilangan ganjil dijumlahkan menjadi 50?
+
+\textit{Jawab:} Jumlah 7 bilangan ganjil pasti ganjil, sedangkan 50 genap. Jadi \textbf{tidak bisa}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Bisakah 4 bilangan ganjil dijumlahkan menjadi 21? \kosong
+    \item Bisakah jumlah dua bilangan berurutan sama dengan 2026? \kosong
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item Ganjil + ganjil = genap. Ganjil + genap = ganjil. Genap + genap = genap.
+    \item Ganjil $\times$ ganjil = ganjil. Kalau ada yang genap, hasil kalinya genap.
+    \item Jumlah banyak bilangan ganjil jika banyaknya bilangan ganjil di dalamnya ganjil.
+    \item Paritas bisa dipakai untuk membuktikan sesuatu tidak mungkin.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: ganjil, ganjil. \quad Langkah 2: genap, ganjil. \quad
+Langkah 3: tidak bisa, tidak bisa.
+
+\newpage
+\subsection*{Latihan Soal}
+\textit{Catatan: Kerjakan tanpa harus menghitung hasil akhirnya secara detail!}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+    \item Tentukan paritas (ganjil/genap) dari $111 + 222 + 333 + 444$.
+          \jawab{genap}{Ganjil + genap + ganjil + genap.}
+    \item Tentukan paritas dari $13 \times 15 \times 17 \times 19$.
+          \jawab{ganjil}{Semua faktornya ganjil.}
+    \item Tentukan paritas dari $(2024 \times 2025) + 2026$.
+          \jawab{genap}{Genap + genap.}
+    \item Tentukan paritas dari $(99 \times 98) + (97 \times 96)$.
+          \jawab{genap}{Kedua perkalian memuat bilangan genap.}
+    \item Tentukan paritas dari $1 + 2 + 3 + \dots + 10$.
+          \jawab{ganjil}{Ada 5 bilangan ganjil. Hasilnya 55.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item Jika $x$ ganjil dan $y$ genap, apakah $x^2 + y$ ganjil atau genap?
+          \jawab{ganjil}{$x^2$ ganjil, ditambah genap tetap ganjil.}
+    \item Jika $5a$ adalah bilangan genap, apakah $a$ pasti bilangan genap?
+          \jawab{ya}{Kalau $a$ ganjil, $5a$ pasti ganjil.}
+    \item Jika $a + b$ ganjil, apakah $a \times b$ pasti ganjil atau pasti genap?
+          \jawab{pasti genap}{Salah satu dari $a$ dan $b$ harus genap.}
+    \item Jika $3m + 7n$ genap, apakah $m + n$ selalu genap? Jelaskan alasanmu.
+          \jawab{ya}{Selisih $(3m + 7n) - (m + n) = 2m + 6n$ selalu genap, jadi keduanya sama
+          ganjil-genapnya.}
+    \item Benar atau salah: ``Jumlah dua bilangan bulat berurutan selalu ganjil.'' Jelaskan.
+          \jawab{benar}{Dari dua bilangan berurutan, satu ganjil dan satu genap.}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item Ada 5 kotak yang masing-masing berisi bola. Jumlah seluruh bola adalah 100. Bisakah
+          semua kotak berisi bola dalam jumlah ganjil?
+          \jawab{tidak bisa}{Jumlah 5 bilangan ganjil pasti ganjil, sedangkan 100 genap.}
+    \item \textbf{(Semut di Papan Catur)} Seekor semut berjalan di papan catur. Setiap langkah ia
+          pindah dari kotak putih ke hitam atau dari hitam ke putih. Jika ia mulai di kotak putih
+          dan melangkah 2025 kali, di warna apa ia berhenti?
+          \jawab{hitam}{Setelah langkah ganjil, semut selalu di hitam.}
+    \item Di antara angka $1, 2, 3, \dots, 9$ kamu boleh meletakkan tanda $+$ atau $-$.
+          Bisakah hasilnya sama dengan 0?
+          \jawab{tidak bisa}{$1 + 2 + \dots + 9 = 45$ ganjil. Mengganti $+$ menjadi $-$ mengubah
+          hasil sebanyak bilangan genap, jadi hasilnya selalu ganjil.}
+    \item \textbf{(Buku Robek)} Sebuah buku setebal 50 lembar (100 halaman) robek satu lembarnya.
+          Mungkinkah jumlah semua nomor halaman yang tersisa adalah bilangan ganjil?
+          \jawab{mungkin, malah selalu ganjil}{Jumlah halaman 1 sampai 100 adalah 5050 (genap).
+          Satu lembar berisi dua halaman berurutan, jumlahnya ganjil. Genap dikurangi ganjil hasilnya ganjil.}
+    \item \textbf{(Koin di Meja)} Ada 9 koin yang semuanya menunjukkan sisi Angka. Setiap langkah
+          kamu wajib membalik tepat 2 koin. Bisakah semua koin menunjukkan sisi Gambar?
+          \jawab{tidak bisa}{Banyak koin Angka berubah 2, 0, atau $-2$, jadi tetap ganjil.
+          Padahal semua Gambar artinya 0 koin Angka (genap).}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{15}
+    \item Di papan tertulis bilangan $1, 2, 3, \dots, 10$. Setiap langkah, kamu menghapus dua
+          bilangan, lalu menuliskan selisih keduanya (bilangan besar dikurangi bilangan kecil).
+          Setelah 9 langkah tersisa satu bilangan. Buktikan bahwa bilangan itu pasti ganjil.
+          \jawab{bukti}{Perhatikan jumlah semua bilangan di papan. Jika $a$ dan $b$ dihapus lalu
+          diganti $a - b$, jumlahnya berkurang $(a + b) - (a - b) = 2b$, yaitu bilangan genap.
+          Jadi ganjil-genapnya jumlah semua bilangan \emph{tidak pernah berubah}. Di awal,
+          jumlahnya $1 + 2 + \dots + 10 = 55$, ganjil. Maka di akhir, bilangan yang tersisa (yang
+          sekaligus menjadi jumlahnya) juga ganjil. \hfill$\blacksquare$\\
+          \emph{Ide ini disebut invarian: mencari sesuatu yang tidak berubah.}}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{16}
+    \item Tentukan semua bilangan asli $n$ sehingga tanda $\pm$ pada
+          $1 \pm 2 \pm 3 \pm \dots \pm n$ bisa dipilih ($+$ atau $-$) agar hasilnya 0.
+          Buktikan bahwa tidak ada nilai $n$ lain yang memenuhi.
+          \jawab{$n$ yang jika dibagi 4 bersisa 0 atau 3}{
+          \emph{Syarat perlu.} Seperti soal nomor 13, hasilnya selalu sama ganjil-genapnya dengan
+          $1 + 2 + \dots + n = \frac{n(n+1)}{2}$. Supaya bisa 0, nilai ini harus genap, artinya
+          $n(n+1)$ habis dibagi 4. Karena $n$ dan $n+1$ tidak mungkin sama-sama genap, salah satunya
+          harus habis dibagi 4. Jadi $n$ bersisa 0 atau 3 jika dibagi 4.\\
+          \emph{Syarat cukup.} Empat bilangan berurutan bisa dibuat 0:
+          $a - (a+1) - (a+2) + (a+3) = 0$.
+          Jika $n = 4k$: kelompokkan $1, 2, \dots, n$ menjadi $k$ kelompok berisi 4, masing-masing
+          dibuat 0 (kelompok pertama $1 - 2 - 3 + 4$).
+          Jika $n = 4k + 3$: tulis $1 + 2 - 3 = 0$, lalu sisanya $4, 5, \dots, n$ dikelompokkan
+          per 4 dengan cara yang sama. \hfill$\blacksquare$}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Topik 2: Pola Angka Satuan}
+% ====================================================================
+
+\begin{catatanguru}
+Ayo Selidiki sebaiknya dikerjakan sendiri oleh siswa. Kesalahan yang paling sering terjadi
+adalah ketika sisa pembagiannya 0 (Langkah 2).
+\end{catatanguru}
+
+\begin{selidiki}
+Ambil pensilmu. Lengkapi tabel di bawah ini. Kamu cukup menulis \textbf{angka satuannya}
+saja (angka paling belakang).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|*{8}{>{\centering\arraybackslash}p{0.9cm}|}}
+\hline
+Pangkat ke- & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\ \hline
+Satuan $2^n$ & 2 & 4 & 8 & & & & & \\ \hline
+Satuan $3^n$ & 3 & 9 & & & & & & \\ \hline
+\end{tabular}
+\end{center}
+
+\textit{Petunjuk: kamu tidak perlu menghitung $2^8$ sampai habis. Cukup kalikan angka satuan
+sebelumnya. Misalnya, satuan $2^3$ adalah 8, jadi satuan $2^4$ sama dengan satuan
+$8 \times 2 = 16$, yaitu 6.}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Apa yang kamu lihat pada baris $2^n$? Angka apa saja yang muncul berulang?
+    \item Setelah berapa langkah polanya kembali ke awal?
+    \item Tanpa menghitung, tebak angka satuan $2^{9}$ dan $2^{10}$.
+\end{enumerate}
+
+Kalau kamu menemukan bahwa angka satuannya berulang terus, selamat! Kamu baru saja menemukan
+rahasia untuk menghitung bilangan raksasa seperti $3^{2026}$ tanpa kalkulator.
+\end{selidiki}
+
+\subsection*{Langkah 1: Bagi pangkatnya dengan panjang pola}
+Pola angka satuan dari pangkat 3 adalah \textbf{3, 9, 7, 1}, lalu berulang. Panjang polanya 4.
+
+\begin{contoh}
+\textbf{Contoh.} Berapa angka satuan dari $3^{2026}$?
+
+\textit{Jawab:} Bagi pangkatnya dengan 4: $2026 \div 4 = 506$ sisa \textbf{2}. Ambil angka
+urutan ke-2 dari pola (3, \textbf{9}, 7, 1). Jadi angka satuannya \textbf{9}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Angka satuan dari $2^{15}$ adalah \kosong. \quad (pola 2: 2, 4, 8, 6)
+    \item Angka satuan dari $7^{42}$ adalah \kosong. \quad (pola 7: 7, 9, 3, 1)
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Hati-hati kalau sisanya 0}
+Kalau pangkatnya habis dibagi panjang pola, tidak ada ``urutan ke-0''. Ambil angka yang
+\textbf{paling terakhir} dari pola.
+
+\begin{contoh}
+\textbf{Contoh.} Berapa angka satuan dari $3^{100}$?
+
+\textit{Jawab:} $100 \div 4 = 25$ sisa \textbf{0}. Ambil angka terakhir dari pola
+(3, 9, 7, \textbf{1}). Jadi angka satuannya \textbf{1}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Angka satuan dari $8^{100}$ adalah \kosong. \quad (pola 8: 8, 4, 2, 6)
+    \item Angka satuan dari $2^{2024}$ adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: Angka di depan tidak penting}
+Angka satuan hasil perkalian hanya ditentukan oleh angka satuan bilangannya. Jadi angka
+ribuan, ratusan, dan puluhan boleh kita abaikan.
+
+\begin{contoh}
+\textbf{Contoh.} Berapa angka satuan dari $2027^{2026}$?
+
+\textit{Jawab:} Angka satuan 2027 adalah 7, jadi cukup cari angka satuan $7^{2026}$.
+$2026 \div 4$ sisa 2. Urutan ke-2 dari pola (7, \textbf{9}, 3, 1) adalah \textbf{9}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Angka satuan dari $1234^{5}$ adalah \kosong.
+    \item Angka satuan dari $2029^{2026}$ adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 4: Menjumlah dan mengali}
+Cari angka satuan masing-masing dulu, baru dijumlah atau dikali. Setelah itu, ambil lagi
+angka satuannya.
+
+\begin{contoh}
+\textbf{Contoh.} Berapa angka satuan dari $4^{2025} + 6^{2025}$?
+
+\textit{Jawab:} Pola 4 adalah 4, 6, 4, 6, \dots{} Pangkatnya ganjil, jadi satuannya 4.
+Pangkat dari 6 selalu berakhiran 6. Jadi $4 + 6 = 10$, dan angka satuannya \textbf{0}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Angka satuan dari $2^{2025} + 2^{2026}$ adalah \kosong.
+    \item Angka satuan dari $2^{10} \times 3^{10}$ adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item Tulis beberapa angka satuan awal sampai polanya berulang.
+    \item Bagi pangkatnya dengan panjang pola, lalu lihat sisanya.
+    \item Sisa 1 berarti urutan ke-1, sisa 2 berarti urutan ke-2, dan seterusnya.
+          \textbf{Sisa 0 berarti urutan terakhir.}
+    \item Angka di depan tidak penting. Cukup lihat angka satuannya.
+    \item Untuk menjumlah atau mengali, cari angka satuan masing-masing dulu.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: 8, 9. \quad Langkah 2: 6, 6. \quad Langkah 3: 4, 1. \quad
+Langkah 4: 6, 6.
+
+\newpage
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+    \item Berapakah angka satuan dari $9^{2026}$?
+          \jawab{1}{Pola 9, 1. Pangkat genap.}
+    \item \textbf{(Bakteri Super)} Sebuah bakteri membelah diri menjadi 3 setiap jam. Pada jam
+          pertama ada 3 bakteri, jam kedua 9 bakteri, dan seterusnya. Berapakah angka terakhir dari
+          banyaknya bakteri pada jam ke-50?
+          \jawab{9}{$3^{50}$, dan $50 \div 4$ sisa 2.}
+    \item \textbf{(Mesin Tiket)} Sebuah mesin mencetak nomor seri $7^n$ untuk pembeli ke-$n$.
+          Nomor seri pembeli ke-41 berakhiran angka berapa?
+          \jawab{7}{$41 \div 4$ sisa 1.}
+    \item Berapakah angka satuan dari $5^{2026}$ dan $6^{2026}$?
+          \jawab{5 dan 6}{Pangkat 5 selalu berakhiran 5, pangkat 6 selalu berakhiran 6.}
+    \item Berapakah angka satuan dari $4^{99}$?
+          \jawab{4}{Pola 4, 6. Pangkat ganjil.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item Tentukan angka satuan dari $3^{10} + 7^{10}$.
+          \jawab{8}{$9 + 9 = 18$.}
+    \item \textbf{(Gembok Koper Budi)} Budi lupa kode 3 digit gembok kopernya. Petunjuknya:
+          \textit{``Digit pertama adalah angka satuan $2^{40}$, digit kedua angka satuan $3^{41}$,
+          dan digit ketiga angka satuan $4^{42}$.''} Berapa kodenya?
+          \jawab{636}{$2^{40} \to 6$, $3^{41} \to 3$, $4^{42} \to 6$.}
+    \item \textbf{(Sandi Agen 007)} PIN brankas adalah angka satuan dari \textit{``banyak hari
+          dalam seminggu dipangkatkan tahun kemerdekaan Indonesia''}. Berapakah PIN-nya?
+          \jawab{7}{$7^{1945}$, dan $1945 \div 4$ sisa 1.}
+    \item Tentukan angka satuan dari $9^{99} - 4^{44}$.
+          \jawab{3}{$9 - 6$.}
+    \item \textbf{(Kalkulator Rusak)} Layar kalkulator Andi hanya menampilkan 1 digit terakhir.
+          Andi mengetik $2^{2025} + 2^{2026} + 2^{2027}$. Angka berapa yang muncul?
+          \jawab{4}{$2 + 4 + 8 = 14$.}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item Tentukan angka satuan dari $2023^{2024} + 2024^{2023}$.
+          \jawab{5}{$3^{2024} \to 1$ dan $4^{2023} \to 4$.}
+    \item \textbf{(Harta Karun Raja)} Raja memberi ksatrianya koin emas sebanyak
+          $13^{13} \times 17^{17}$. Koin itu dibagi rata ke 10 panti asuhan. Berapa koin yang
+          tersisa? \textit{(Petunjuk: sisa bagi 10 sama dengan angka satuan!)}
+          \jawab{1}{$3^{13} \to 3$ dan $7^{17} \to 7$. $3 \times 7 = 21$.}
+    \item Tentukan angka satuan dari $1^1 + 2^2 + 3^3 + 4^4 + 5^5$.
+          \jawab{3}{$1 + 4 + 7 + 6 + 5 = 23$.}
+    \item \textbf{(Bom Waktu)} Untuk menjinakkan bom, kamu harus memasukkan angka satuan dari
+          $2^{3^4}$. Angka berapa yang kamu masukkan? (Kerjakan pangkat yang di atas dulu ya!)
+          \jawab{2}{$3^4 = 81$, jadi $2^{81}$. $81 \div 4$ sisa 1.}
+    \item Tentukan angka satuan dari $1^{2026} + 2^{2026} + 3^{2026} + \dots + 9^{2026}$.
+          \jawab{5}{$1 + 4 + 9 + 6 + 5 + 6 + 9 + 4 + 1 = 45$.}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{15}
+    \item Buktikan bahwa untuk setiap bilangan asli $n$, bilangan $n^5 - n$ selalu habis
+          dibagi 10.
+          \jawab{bukti}{Cukup ditunjukkan bahwa angka satuan $n^5$ sama dengan angka satuan $n$.
+          Angka satuan $n^5$ hanya bergantung pada angka satuan $n$, jadi kita cek 10 kemungkinan:
+          $0^5 \to 0$, $1^5 \to 1$, $2^5 = 32 \to 2$, $3^5 = 243 \to 3$, $4^5 = 1024 \to 4$,
+          $5^5 \to 5$, $6^5 \to 6$, $7^5 = 16807 \to 7$, $8^5 = 32768 \to 8$, $9^5 = 59049 \to 9$.
+          Semuanya sama. Jadi $n^5$ dan $n$ punya angka satuan yang sama, sehingga $n^5 - n$
+          berakhiran 0 dan habis dibagi 10. \hfill$\blacksquare$}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{16}
+    \item Tentukan semua bilangan asli $n$ sehingga $n^n$ berakhiran angka 7. Buktikan bahwa
+          tidak ada bilangan lain yang memenuhi.
+          \jawab{$n$ yang jika dibagi 20 bersisa 3 atau 17}{
+          Angka satuan $n^n$ ditentukan oleh angka satuan $n$. Dari pola-pola angka satuan, angka 7
+          hanya bisa muncul jika angka satuan $n$ adalah 3 (pola 3, 9, 7, 1) atau 7 (pola 7, 9, 3, 1).
+          Angka satuan lain tidak pernah menghasilkan 7.\\
+          \emph{Kasus satuan 3:} butuh pangkat yang bersisa 3 jika dibagi 4. Tulis $n = 10k + 3$.
+          Karena $10k + 3 = 8k + (2k + 3)$, sisanya jika dibagi 4 sama dengan sisa $2k + 3$. Ini
+          bersisa 3 hanya jika $k$ genap, yaitu $n = 3, 23, 43, \dots$ (bersisa 3 jika dibagi 20).\\
+          \emph{Kasus satuan 7:} butuh pangkat yang bersisa 1 jika dibagi 4. Tulis $n = 10k + 7$,
+          sisanya sama dengan sisa $2k + 7$, yang bersisa 1 hanya jika $k$ ganjil, yaitu
+          $n = 17, 37, 57, \dots$ (bersisa 17 jika dibagi 20). \hfill$\blacksquare$}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Topik 3: Sisa Pembagian}
+% ====================================================================
+
+\begin{catatanguru}
+Hubungkan dengan Topik 2: angka satuan sama dengan sisa pembagian oleh 10. Untuk kelas 8--9 boleh
+dikenalkan notasi $a \equiv b \pmod{n}$, tetapi tidak wajib.
+\end{catatanguru}
+
+\begin{selidiki}
+Hari ini hari \textbf{Senin}. Lengkapi tabel berikut.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|*{6}{>{\centering\arraybackslash}p{1.3cm}|}}
+\hline
+Berapa hari lagi? & 7 & 14 & 15 & 16 & 21 & 23\\ \hline
+Hari apa? & & & & & & \\ \hline
+\end{tabular}
+\end{center}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Hari apa saja yang jatuh 7, 14, dan 21 hari lagi? Kenapa?
+    \item 15 hari lagi sama dengan berapa hari lagi? Bagaimana dengan 23 hari lagi?
+    \item Tanpa melihat kalender, tebak hari apa 100 hari lagi.
+\end{enumerate}
+
+Setiap 7 hari, harinya kembali sama. Jadi yang penting hanya \textbf{sisa} pembagian oleh 7.
+Karena $100 = 7 \times 14 + 2$, maka 100 hari lagi sama dengan 2 hari lagi, yaitu \textbf{Rabu}.
+\end{selidiki}
+
+\subsection*{Langkah 1: Sisa pembagian}
+Jika $a$ dibagi $b$, maka $a = b \times \text{(hasil bagi)} + \text{sisa}$, dan sisanya selalu
+lebih kecil dari $b$. Contoh: $100 = 7 \times 14 + 2$, jadi 100 dibagi 7 bersisa 2.
+
+\begin{contoh}
+\textbf{Contoh.} Berapa sisa pembagian 2027 oleh 7?
+
+\textit{Jawab:} Cari kelipatan 7 yang dekat: $7 \times 289 = 2023$. Jadi $2027 = 2023 + 4$,
+sisanya \textbf{4}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Hari ini hari Kamis. 30 hari lagi adalah hari \kosong.
+    \item Sisa pembagian 2026 oleh 7 adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Ganti bilangan dengan sisanya}
+Untuk mencari sisa dari hasil penjumlahan atau perkalian, kita boleh mengganti setiap bilangan
+dengan sisanya dulu. Bilangannya boleh besar, yang dihitung hanya sisanya yang kecil.
+
+\begin{contoh}
+\textbf{Contoh.} Tentukan sisa pembagian $2025 \times 2026$ oleh 7.
+
+\textit{Jawab:} Karena $2023 = 7 \times 289$, maka 2025 bersisa 2 dan 2026 bersisa 3.
+Sisanya $2 \times 3 = \textbf{6}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Sisa pembagian $23 + 19 + 18$ oleh 5 adalah \kosong.
+    \item Sisa pembagian $26 \times 27$ oleh 5 adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: Sisa dari bilangan berpangkat}
+Untuk pangkat, cari pola sisanya, sama seperti pola angka satuan di Topik 2.
+
+\begin{contoh}
+\textbf{Contoh.} Tentukan sisa pembagian $2^{100}$ oleh 7.
+
+\textit{Jawab:} Sisa $2^1, 2^2, 2^3, 2^4, \dots$ jika dibagi 7 adalah 2, 4, 1, 2, 4, 1, \dots{}
+Polanya 3 langkah. $100 \div 3$ sisa 1, jadi ambil urutan ke-1: sisanya \textbf{2}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Sisa pembagian $3^{50}$ oleh 4 adalah \kosong.
+    \item Sisa pembagian $2^{20}$ oleh 5 adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 4: Sisa $-1$}
+Kalau bilangannya kurang 1 dari pembagi (misalnya 6 dibagi 7), anggap saja sisanya $-1$.
+Karena $(-1) \times (-1) = 1$, pangkatnya tinggal dilihat ganjil atau genap.
+
+\begin{contoh}
+\textbf{Contoh.} Tentukan sisa pembagian $6^{2027}$ oleh 7.
+
+\textit{Jawab:} 6 kita anggap $-1$. Pangkatnya ganjil, jadi hasilnya $-1$. Sisa $-1$ artinya
+kurang 1 dari 7, yaitu \textbf{6}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Sisa pembagian $4^{101}$ oleh 5 adalah \kosong.
+    \item Sisa pembagian $10^{2026}$ oleh 11 adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item Untuk soal hari, jam, atau pola berulang, yang penting hanya sisanya.
+    \item Ganti setiap bilangan dengan sisanya sebelum dijumlah atau dikali.
+    \item Untuk pangkat, cari pola sisanya.
+    \item Kalau bilangannya kurang 1 dari pembagi, anggap sisanya $-1$.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: Sabtu, 3. \quad Langkah 2: 0, 2. \quad Langkah 3: 1, 1.
+\quad Langkah 4: 4, 1.
+
+\newpage
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+    \item Berapakah sisa pembagian 2026 oleh 9?
+          \jawab{1}{$2025 = 9 \times 225$.}
+    \item Hari ini hari Senin. Hari apakah 50 hari lagi?
+          \jawab{Selasa}{50 dibagi 7 sisa 1.}
+    \item \textbf{(Jam Dinding)} Sekarang pukul 09.00. Pukul berapakah 100 jam lagi?
+          \jawab{13.00}{100 dibagi 24 sisa 4.}
+    \item Tentukan sisa pembagian $25 + 38 + 47$ oleh 5 tanpa menjumlahkannya dulu.
+          \jawab{0}{Sisanya $0 + 3 + 2 = 5$, habis dibagi 5.}
+    \item \textbf{(Kalung Manik-Manik)} Sebuah kalung disusun dengan pola Merah, Putih, Biru, Hijau,
+          Merah, Putih, Biru, Hijau, dan seterusnya. Apa warna manik ke-2026?
+          \jawab{Putih}{2026 dibagi 4 sisa 2.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item Tentukan sisa pembagian $2024 \times 2025 \times 2026$ oleh 7.
+          \jawab{6}{Sisanya $1 \times 2 \times 3$.}
+    \item Tentukan sisa pembagian $2^{100}$ oleh 3.
+          \jawab{1}{2 dianggap $-1$, pangkat genap.}
+    \item Tentukan sisa pembagian $3^{2026}$ oleh 5.
+          \jawab{4}{Angka satuan $3^{2026}$ adalah 9 (Topik 2), dan 9 dibagi 5 sisa 4.}
+    \item Bilangan $n$ jika dibagi 7 bersisa 5. Tentukan sisa pembagian $n^2 + 3n$ oleh 7.
+          \jawab{5}{Ganti $n$ dengan 5: $25 + 15 = 40$, dan 40 dibagi 7 sisa 5.}
+    \item \textbf{(Kalender Kemerdekaan)} Tanggal 17 Agustus 2026 jatuh pada hari Senin.
+          Hari apakah 17 Agustus 2028? (Ingat, 2028 adalah tahun kabisat!)
+          \jawab{Kamis}{Dari 2026 ke 2027 ada 365 hari (maju 1 hari), dari 2027 ke 2028 ada 366 hari
+          (maju 2 hari).}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item Tentukan sisa pembagian $2^{2026}$ oleh 7.
+          \jawab{2}{Pola sisa 2, 4, 1. $2026 \div 3$ sisa 1.}
+    \item Hari ini hari Minggu. Hari apakah $10^{10}$ hari lagi?
+          \jawab{Kamis}{10 dibagi 7 sisa 3. Pola sisa $3^n$: 3, 2, 6, 4, 5, 1 (berulang setiap 6).
+          $10 \div 6$ sisa 4, jadi sisanya 4. Minggu ditambah 4 hari.}
+    \item Tentukan sisa pembagian $6^{2025} + 8^{2025}$ oleh 7.
+          \jawab{0}{6 dianggap $-1$, 8 bersisa 1. Jadi $-1 + 1 = 0$.}
+    \item Buktikan bahwa $n^3 - n$ selalu habis dibagi 3 untuk setiap bilangan bulat $n$.
+          \textit{(Petunjuk: $n$ dibagi 3 sisanya hanya mungkin 0, 1, atau 2. Coba ketiganya!)}
+          \jawab{bukti}{Sisa 0: $0 - 0 = 0$. Sisa 1: $1 - 1 = 0$. Sisa 2: $8 - 2 = 6$, habis dibagi 3.}
+    \item Tunjukkan bahwa bilangan kuadrat jika dibagi 4 sisanya hanya 0 atau 1. Lalu, mungkinkah
+          $2027 = a^2 + b^2$ untuk suatu bilangan bulat $a$ dan $b$?
+          \jawab{tidak mungkin}{Bilangan genap kuadrat habis dibagi 4, bilangan ganjil kuadrat
+          bersisa 1. Jadi $a^2 + b^2$ bersisa 0, 1, atau 2, padahal 2027 bersisa 3.}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{15}
+    \item Buktikan bahwa jika $a^2 + b^2$ habis dibagi 3, maka $a$ dan $b$ keduanya habis
+          dibagi 3.
+          \jawab{bukti}{Pertama, cek sisa bilangan kuadrat jika dibagi 3. Jika $a$ bersisa 0, 1,
+          atau 2, maka $a^2$ bersisa $0$, $1$, atau $4 \to 1$. Jadi kuadrat hanya bersisa 0 atau 1,
+          dan bersisa 0 hanya jika $a$ habis dibagi 3.\\
+          Sisa $a^2 + b^2$ adalah $0 + 0$, $0 + 1$, $1 + 0$, atau $1 + 1 = 2$. Yang habis dibagi 3
+          hanya $0 + 0$, artinya $a^2$ dan $b^2$ sama-sama bersisa 0. Jadi $a$ dan $b$ keduanya
+          habis dibagi 3. \hfill$\blacksquare$}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{16}
+    \item Tentukan semua bilangan asli $n$ sehingga $n \times 2^n + 1$ habis dibagi 3.
+          Buktikan jawabanmu.
+          \jawab{$n$ yang jika dibagi 6 bersisa 1 atau 2}{
+          Jika dibagi 3, angka 2 dianggap $-1$. Jadi $2^n$ bersisa 1 jika $n$ genap dan bersisa
+          $-1$ jika $n$ ganjil.\\
+          \emph{Kasus $n$ genap:} $n \times 2^n + 1$ bersisa sama dengan $n + 1$. Habis dibagi 3
+          jika $n$ bersisa 2 jika dibagi 3. Bilangan genap yang bersisa 2 jika dibagi 3 adalah
+          2, 8, 14, \dots, yaitu yang bersisa 2 jika dibagi 6.\\
+          \emph{Kasus $n$ ganjil:} bersisa sama dengan $-n + 1$. Habis dibagi 3 jika $n$ bersisa 1
+          jika dibagi 3. Bilangan ganjil seperti itu adalah 1, 7, 13, \dots, yaitu yang bersisa 1
+          jika dibagi 6.\\
+          Jadi jawabannya semua $n$ yang bersisa 1 atau 2 jika dibagi 6. \hfill$\blacksquare$}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Topik 4: Ciri Habis Dibagi}
+% ====================================================================
+
+\begin{catatanguru}
+Setelah Ayo Selidiki, tunjukkan alasan ciri habis dibagi 9: $10, 100, 1000, \dots$ semuanya
+bersisa 1 jika dibagi 9 (Topik 3). Tekankan jebakan pembagi gabungan: 24 bukan $4 \times 6$.
+\end{catatanguru}
+
+\begin{selidiki}
+Semua bilangan di bawah ini adalah kelipatan 9. Jumlahkan digit-digitnya.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|*{7}{>{\centering\arraybackslash}p{1.1cm}|}}
+\hline
+Bilangan & 18 & 27 & 54 & 99 & 117 & 315 & 2025\\ \hline
+Jumlah digit & 9 & & & & & & \\ \hline
+\end{tabular}
+\end{center}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Apa yang kamu lihat pada jumlah digitnya?
+    \item Tanpa membagi, tebak: apakah 1233 habis dibagi 9? Bagaimana dengan 1234?
+    \item Coba juga untuk kelipatan 3: 12, 15, 21, 111. Apa yang kamu lihat?
+\end{enumerate}
+
+Jumlah digit kelipatan 9 selalu habis dibagi 9. Ini adalah \textbf{ciri habis dibagi 9}.
+Masih ada banyak ciri lain yang akan kita pelajari.
+\end{selidiki}
+
+\subsection*{Langkah 1: Ciri dari digit terakhir}
+Sebuah bilangan habis dibagi \textbf{2} jika digit terakhirnya genap, habis dibagi \textbf{5}
+jika digit terakhirnya 0 atau 5, habis dibagi \textbf{4} jika 2 digit terakhirnya habis dibagi 4,
+dan habis dibagi \textbf{8} jika 3 digit terakhirnya habis dibagi 8.
+
+\begin{contoh}
+\textbf{Contoh.} Apakah 123456 habis dibagi 4? Apakah habis dibagi 8?
+
+\textit{Jawab:} Dua digit terakhir 56, dan $56 = 4 \times 14$, jadi habis dibagi 4.
+Tiga digit terakhir 456, dan $456 = 8 \times 57$, jadi habis dibagi 8 juga.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Apakah 2026 habis dibagi 4? \kosong
+    \item Apakah 51128 habis dibagi 8? \kosong
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Ciri dari jumlah digit}
+Sebuah bilangan habis dibagi \textbf{3} jika jumlah digitnya habis dibagi 3, dan habis dibagi
+\textbf{9} jika jumlah digitnya habis dibagi 9. Bonus: sisa pembagian oleh 9 sama dengan sisa
+jumlah digitnya dibagi 9.
+
+\begin{contoh}
+\textbf{Contoh.} Apakah 123456789 habis dibagi 9?
+
+\textit{Jawab:} Jumlah digitnya $1 + 2 + \dots + 9 = 45$, dan 45 habis dibagi 9. Jadi \textbf{ya}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Apakah 2025 habis dibagi 9? \kosong
+    \item Sisa pembagian 1234 oleh 9 adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: Ciri habis dibagi 11}
+Jumlahkan digit secara selang-seling dari kanan: tambah, kurang, tambah, kurang, dan seterusnya.
+Jika hasilnya habis dibagi 11 (termasuk 0), bilangan itu habis dibagi 11.
+
+\begin{contoh}
+\textbf{Contoh.} Apakah 2728 habis dibagi 11?
+
+\textit{Jawab:} Dari kanan: $8 - 2 + 7 - 2 = 11$. Karena 11 habis dibagi 11, maka 2728 habis
+dibagi 11. (Memang $2728 = 11 \times 248$.)
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Apakah 1331 habis dibagi 11? \kosong
+    \item Apakah 2026 habis dibagi 11? \kosong
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 4: Pembagi gabungan}
+Habis dibagi 6 artinya habis dibagi 2 \textbf{dan} 3. Habis dibagi 72 artinya habis dibagi 8
+\textbf{dan} 9. Hati-hati, kedua pembaginya tidak boleh punya faktor yang sama. Contohnya, 12
+habis dibagi 4 dan 6, tetapi tidak habis dibagi 24.
+
+\begin{contoh}
+\textbf{Contoh.} Bilangan 5 digit $7a36b$ habis dibagi 72. Tentukan semua kemungkinannya.
+
+\textit{Jawab:} Supaya habis dibagi 8, tiga digit terakhir ($36b$) harus habis dibagi 8, jadi
+$b = 0$ atau $b = 8$. Supaya habis dibagi 9, jumlah digit $16 + a + b$ harus kelipatan 9.
+Kalau $b = 0$, maka $a = 2$. Kalau $b = 8$, maka $a = 3$. Jadi bilangannya \textbf{72360}
+atau \textbf{73368}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Apakah 2028 habis dibagi 6? \kosong
+    \item Digit $a$ supaya $3a6$ habis dibagi 6 adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item Dibagi 2, 5: lihat 1 digit terakhir. Dibagi 4: 2 digit terakhir. Dibagi 8: 3 digit terakhir.
+    \item Dibagi 3 dan 9: lihat jumlah semua digit.
+    \item Dibagi 11: jumlahkan digit selang-seling (tambah, kurang, tambah, \dots).
+    \item Pembagi gabungan: pecah menjadi dua pembagi yang tidak punya faktor sama.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: tidak, ya. \quad Langkah 2: ya, 1. \quad Langkah 3: ya, tidak.
+\quad Langkah 4: ya, 0, 3, 6, atau 9.
+
+\newpage
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+    \item Manakah yang habis dibagi 3: 2025, 1234, 111111, 2026?
+          \jawab{2025 dan 111111}{Jumlah digitnya 9 dan 6.}
+    \item Apakah 7392 habis dibagi 8?
+          \jawab{ya}{$392 = 8 \times 49$.}
+    \item Apakah 918082 habis dibagi 11?
+          \jawab{ya}{$2 - 8 + 0 - 8 + 1 - 9 = -22$.}
+    \item Bilangan $45\square$ habis dibagi 6. Angka berapa saja yang bisa mengisi kotak?
+          \jawab{0 atau 6}{Harus genap dan $4 + 5 + \square$ habis dibagi 3.}
+    \item Tentukan sisa pembagian 20262026 oleh 9.
+          \jawab{2}{Jumlah digitnya 20, dan 20 dibagi 9 sisa 2.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item Tentukan digit $a$ supaya bilangan $2a26$ habis dibagi 11.
+          \jawab{$a = 9$}{$6 - 2 + a - 2 = a + 2$ harus habis dibagi 11.}
+    \item Ada berapa bilangan 4 digit berbentuk $1a2b$ yang habis dibagi 15?
+          \jawab{7}{$b = 0$: $a$ = 0, 3, 6, 9. $b = 5$: $a$ = 1, 4, 7.}
+    \item \textbf{(Nota yang Robek)} Pak Ali membeli 72 pensil yang harganya sama. Total harganya
+          tertulis Rp$\square679\square$, tetapi digit pertama dan terakhirnya terhapus air hujan.
+          Berapakah harga satu pensil?
+          \jawab{Rp511}{Habis dibagi 8: $79\square$ harus kelipatan 8, jadi digit terakhir 2.
+          Habis dibagi 9: digit pertama 3. Total Rp36.792, dibagi 72.}
+    \item Buktikan bahwa selisih bilangan dua digit dengan bilangan kebalikannya (misalnya
+          $73 - 37$) selalu habis dibagi 9.
+          \jawab{bukti}{Bilangan $ab$ bernilai $10a + b$. Selisihnya $(10a + b) - (10b + a) = 9a - 9b$.}
+    \item Berapakah bilangan terkecil yang semua digitnya angka 1 dan habis dibagi 9?
+          \jawab{111111111}{Butuh 9 angka 1 supaya jumlah digitnya 9.}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item Berapakah bilangan terkecil yang semua digitnya angka 1 dan habis dibagi 99?
+          \jawab{18 angka 1}{Harus habis dibagi 9 (banyak angka 1 kelipatan 9) dan habis dibagi 11
+          (banyak angka 1 harus genap).}
+    \item Bilangan prima terbesar berapakah yang pasti membagi semua bilangan 6 digit berbentuk
+          $abcabc$?
+          \jawab{13}{$abcabc = abc \times 1001 = abc \times 7 \times 11 \times 13$.}
+    \item Ada berapa bilangan 3 digit yang habis dibagi 3 tetapi tidak habis dibagi 5?
+          \jawab{240}{Kelipatan 3 ada 300, kelipatan 15 ada 60.}
+    \item Bilangan $N$ dibentuk dengan menulis ``2026'' sebanyak 100 kali berturut-turut.
+          Tentukan sisa pembagian $N$ oleh 9.
+          \jawab{1}{Jumlah digitnya $10 \times 100 = 1000$, dan 1000 dibagi 9 sisa 1.}
+    \item Tentukan semua bilangan 6 digit $a2026b$ yang habis dibagi 36.
+          \jawab{420264, 820260, 920268}{Habis dibagi 4: $6b$ kelipatan 4, jadi $b$ = 0, 4, atau 8.
+          Habis dibagi 9: $a + b + 10$ kelipatan 9.}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{15}
+    \item Buktikan bahwa bilangan tiga digit $abc$ habis dibagi 9 jika dan hanya jika
+          $a + b + c$ habis dibagi 9.
+          \jawab{bukti}{Bilangan $abc$ bernilai $100a + 10b + c$. Tulis
+          \[ 100a + 10b + c = (99a + 9b) + (a + b + c) = 9(11a + b) + (a + b + c). \]
+          Bagian $9(11a + b)$ selalu habis dibagi 9. Jadi $abc$ dan $a + b + c$ selalu punya sisa
+          yang sama jika dibagi 9. Akibatnya, $abc$ habis dibagi 9 tepat ketika $a + b + c$ habis
+          dibagi 9. \hfill$\blacksquare$}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{16}
+    \item Tentukan semua bilangan 4 digit berbentuk $aabb$ (dua digit pertama sama dan dua digit
+          terakhir sama) yang merupakan bilangan kuadrat. Buktikan tidak ada yang lain.
+          \jawab{7744}{$aabb = 1100a + 11b = 11(100a + b)$. Karena bilangan kuadrat dan habis dibagi
+          11 (prima), ia harus habis dibagi $11^2$, jadi $100a + b$ habis dibagi 11. Dengan ciri
+          habis dibagi 11, bilangan $a0b$ memberi $b - 0 + a = a + b$, sehingga $a + b$ habis dibagi
+          11. Karena $1 \le a + b \le 18$, maka $a + b = 11$.\\
+          Maka $100a + b = 100a + 11 - a = 99a + 11 = 11(9a + 1)$, dan $aabb = 121(9a + 1)$. Supaya
+          kuadrat, $9a + 1$ harus kuadrat. Untuk $a = 2, \dots, 9$ (karena $b = 11 - a \le 9$),
+          nilai $9a + 1$ adalah 19, 28, 37, 46, 55, 64, 73, 82. Yang kuadrat hanya $64$ ($a = 7$).
+          Jadi $b = 4$, dan bilangannya $7744 = 88^2$. \hfill$\blacksquare$}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Topik 5: Bilangan Prima dan Faktor}
+% ====================================================================
+
+\begin{catatanguru}
+Contoh di Langkah 3 (loker) bisa diperagakan dengan 10 kertas bernomor di papan. Hubungkan
+dengan Ayo Selidiki: bilangan yang banyak faktornya ganjil adalah bilangan kuadrat.
+\end{catatanguru}
+
+\begin{selidiki}
+Tuliskan semua faktor dari setiap bilangan, lalu hitung banyaknya.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|p{5cm}|c|}
+\hline
+Bilangan & Faktor-faktornya & Banyak faktor\\ \hline
+2 & 1, 2 & 2\\ \hline
+4 & 1, 2, 4 & 3\\ \hline
+6 & & \\ \hline
+7 & & \\ \hline
+9 & & \\ \hline
+12 & & \\ \hline
+13 & & \\ \hline
+16 & & \\ \hline
+\end{tabular}
+\end{center}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Bilangan mana saja yang faktornya tepat 2?
+    \item Bilangan mana saja yang banyak faktornya ganjil? Apa istimewanya bilangan-bilangan itu?
+\end{enumerate}
+
+Bilangan yang faktornya tepat 2 (yaitu 1 dan dirinya sendiri) disebut \textbf{bilangan prima}.
+Bilangan yang banyak faktornya ganjil ternyata selalu bilangan kuadrat. Kita akan lihat
+kenapa di Langkah 3.
+\end{selidiki}
+
+\subsection*{Langkah 1: Bilangan prima}
+Bilangan prima: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, \dots{} Angka 1 bukan prima, dan 2 adalah
+satu-satunya prima yang genap. Untuk mengecek apakah sebuah bilangan prima, cukup coba bagi
+dengan bilangan prima yang kuadratnya tidak lebih dari bilangan itu.
+
+\begin{contoh}
+\textbf{Contoh.} Apakah 97 bilangan prima?
+
+\textit{Jawab:} $10^2 = 100 > 97$, jadi cukup coba bagi dengan 2, 3, 5, 7. Tidak ada yang habis.
+Jadi 97 \textbf{prima}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Apakah 91 bilangan prima? \kosong
+    \item Apakah 101 bilangan prima? \kosong
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Faktorisasi prima dan banyak faktor}
+Setiap bilangan bisa ditulis sebagai perkalian bilangan prima, misalnya $72 = 2^3 \times 3^2$.
+Untuk menghitung banyak faktor: \textbf{tambah 1 setiap pangkatnya, lalu kalikan}.
+
+\begin{contoh}
+\textbf{Contoh.} Berapa banyak faktor dari 72?
+
+\textit{Jawab:} $72 = 2^3 \times 3^2$. Banyak faktornya $(3 + 1) \times (2 + 1) = \textbf{12}$.
+(Cek: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72.)
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Banyak faktor dari $36$ adalah \kosong.
+    \item Banyak faktor dari $48$ adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: Bilangan kuadrat}
+Faktor biasanya berpasangan, misalnya $12 = 1 \times 12 = 2 \times 6 = 3 \times 4$. Pada bilangan
+kuadrat seperti $36 = 6 \times 6$, ada faktor yang berpasangan dengan dirinya sendiri, jadi banyak
+faktornya ganjil. Pada faktorisasi prima, bilangan kuadrat \textbf{semua pangkatnya genap}.
+
+\begin{contoh}
+\textbf{Contoh (Loker).} Ada 100 loker tertutup. Siswa ke-1 membalik (buka/tutup) semua loker,
+siswa ke-2 membalik loker nomor 2, 4, 6, \dots, siswa ke-3 membalik loker 3, 6, 9, \dots, sampai
+siswa ke-100. Berapa loker yang terbuka di akhir?
+
+\textit{Jawab:} Loker nomor $k$ dibalik sebanyak banyak faktor $k$. Loker terbuka jika dibalik
+ganjil kali, yaitu jika $k$ bilangan kuadrat: 1, 4, 9, \dots, 100. Jadi ada \textbf{10 loker}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Bilangan terkecil yang jika dikalikan 12 menjadi bilangan kuadrat adalah \kosong.
+    \item Apakah $2^4 \times 3^2 \times 5^2$ bilangan kuadrat? \kosong
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 4: Angka nol di belakang $n!$}
+Notasi $n!$ artinya $1 \times 2 \times 3 \times \dots \times n$. Setiap angka nol di belakang
+berasal dari $10 = 2 \times 5$. Faktor 2 selalu lebih banyak, jadi cukup \textbf{hitung faktor 5}.
+
+\begin{contoh}
+\textbf{Contoh.} Ada berapa angka nol di bagian paling belakang $100!$?
+
+\textit{Jawab:} Kelipatan 5 sampai 100 ada 20. Kelipatan 25 (25, 50, 75, 100) menyumbang satu
+faktor 5 lagi, ada 4. Jadi ada $20 + 4 = \textbf{24}$ angka nol.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Banyak angka nol di belakang $10!$ adalah \kosong.
+    \item Banyak angka nol di belakang $50!$ adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item Bilangan prima hanya punya 2 faktor. Angka 1 bukan prima, dan 2 satu-satunya prima genap.
+    \item Banyak faktor: tambah 1 setiap pangkat pada faktorisasi prima, lalu kalikan.
+    \item Bilangan kuadrat: semua pangkatnya genap, dan banyak faktornya ganjil.
+    \item Angka nol di belakang $n!$: hitung banyak faktor 5.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: tidak ($7 \times 13$), ya. \quad Langkah 2: 9, 10. \quad
+Langkah 3: 3, ya. \quad Langkah 4: 2, 12.
+
+\newpage
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+    \item Tuliskan semua bilangan prima di antara 50 dan 70.
+          \jawab{53, 59, 61, 67}{}
+    \item Manakah yang merupakan bilangan prima: 89, 91, 97, 119?
+          \jawab{89 dan 97}{$91 = 7 \times 13$ dan $119 = 7 \times 17$.}
+    \item Tuliskan faktorisasi prima dari 2024 dan 2025.
+          \jawab{$2^3 \times 11 \times 23$ dan $3^4 \times 5^2$}{}
+    \item Berapakah banyak faktor dari 90?
+          \jawab{12}{$90 = 2 \times 3^2 \times 5$, jadi $2 \times 3 \times 2$.}
+    \item Ada berapa angka nol di bagian paling belakang $25!$?
+          \jawab{6}{Kelipatan 5 ada 5, kelipatan 25 ada 1.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item Berapakah bilangan terkecil yang mempunyai tepat 6 faktor?
+          \jawab{12}{$12 = 2^2 \times 3$, banyak faktornya $3 \times 2 = 6$.}
+    \item Ada berapa faktor dari 360 yang merupakan bilangan genap?
+          \jawab{18}{$360 = 2^3 \times 3^2 \times 5$. Pangkat 2 harus 1, 2, atau 3 (3 pilihan),
+          pangkat 3 ada 3 pilihan, pangkat 5 ada 2 pilihan.}
+    \item \textbf{(Kotak Cokelat)} Bu Rina punya 60 cokelat dan ingin memasukkannya ke beberapa
+          kotak dengan isi yang sama. Setiap kotak berisi minimal 2 cokelat dan kotaknya minimal 2.
+          Ada berapa cara?
+          \jawab{10}{60 punya 12 faktor. Kurangi faktor 1 dan 60.}
+    \item Berapakah bilangan terkecil yang jika dikalikan dengan 180 menjadi bilangan kuadrat?
+          \jawab{5}{$180 = 2^2 \times 3^2 \times 5$.}
+    \item Ada berapa angka nol di bagian paling belakang $2026!$?
+          \jawab{505}{$405 + 81 + 16 + 3$ (kelipatan 5, 25, 125, dan 625).}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item Ada berapa bilangan dari 1 sampai 100 yang mempunyai tepat 3 faktor?
+          \jawab{4}{Hanya kuadrat bilangan prima: 4, 9, 25, 49.}
+    \item \textbf{(Lampu Aula)} Di aula ada 2026 lampu bernomor 1 sampai 2026, semuanya mati.
+          Siswa ke-$k$ menekan saklar semua lampu yang nomornya kelipatan $k$, untuk
+          $k = 1, 2, \dots, 2026$. Ada berapa lampu yang menyala di akhir?
+          \jawab{45}{Sama seperti soal loker. $45^2 = 2025$.}
+    \item Tentukan semua bilangan $n$ sehingga $n!$ diakhiri tepat 6 angka nol.
+          \jawab{$n$ = 25, 26, 27, 28, 29}{$24!$ punya 4 nol, $25!$ punya 6, dan $30!$ punya 7.}
+    \item Berapakah bilangan terkecil yang mempunyai tepat 12 faktor?
+          \jawab{60}{$60 = 2^2 \times 3 \times 5$, banyak faktornya $3 \times 2 \times 2$.}
+    \item Tentukan faktor prima terbesar dari $2^{16} - 1$.
+          \textit{(Petunjuk: $a^2 - b^2 = (a-b)(a+b)$.)}
+          \jawab{257}{$2^{16} - 1 = (2^8 - 1)(2^8 + 1) = 255 \times 257 = 3 \times 5 \times 17 \times 257$.}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{15}
+    \item Buktikan bahwa jika $p$ bilangan prima yang lebih dari 3, maka $p^2 - 1$ habis
+          dibagi 24.
+          \jawab{bukti}{Tulis $p^2 - 1 = (p - 1)(p + 1)$. Karena $24 = 3 \times 8$, cukup buktikan
+          habis dibagi 3 dan habis dibagi 8.\\
+          \emph{Habis dibagi 3:} di antara tiga bilangan berurutan $p - 1$, $p$, $p + 1$, salah
+          satunya habis dibagi 3. Karena $p$ prima lebih dari 3, $p$ tidak habis dibagi 3. Jadi
+          $p - 1$ atau $p + 1$ habis dibagi 3.\\
+          \emph{Habis dibagi 8:} $p$ ganjil, jadi $p - 1$ dan $p + 1$ adalah dua bilangan genap
+          berurutan. Salah satunya pasti kelipatan 4, dan yang lain kelipatan 2. Hasil kalinya
+          habis dibagi $4 \times 2 = 8$. \hfill$\blacksquare$}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{16}
+    \item Tentukan semua bilangan prima $p$ sehingga $p + 10$ dan $p + 14$ juga bilangan prima.
+          Buktikan tidak ada yang lain.
+          \jawab{$p = 3$}{Untuk $p = 3$: $13$ dan $17$ prima, jadi memenuhi.\\
+          Sekarang lihat sisa pembagian oleh 3. Jika $p$ bersisa 1, maka $p + 14$ bersisa
+          $1 + 2 = 3 \to 0$, jadi habis dibagi 3 dan lebih dari 3, bukan prima. Jika $p$ bersisa 2,
+          maka $p + 10$ bersisa $2 + 1 = 3 \to 0$, juga bukan prima. Jadi $p$ harus habis dibagi 3,
+          dan satu-satunya prima yang habis dibagi 3 adalah $p = 3$. \hfill$\blacksquare$}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Topik 6: FPB dan KPK}
+% ====================================================================
+
+\begin{catatanguru}
+Kebanyakan siswa sudah kenal FPB dan KPK dari sekolah. Fokuskan pada membedakan soal cerita FPB
+dan KPK, rumus FPB $\times$ KPK $= a \times b$, dan cara mencari FPB bilangan besar (Langkah 4).
+\end{catatanguru}
+
+\begin{selidiki}
+Lengkapi daftar kelipatan berikut, lalu \textbf{lingkari} bilangan yang muncul di kedua baris.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|*{9}{>{\centering\arraybackslash}p{0.8cm}|}}
+\hline
+Kelipatan 4 & 4 & 8 & & & & & & & 36\\ \hline
+Kelipatan 6 & 6 & 12 & & & & & & & 54\\ \hline
+\end{tabular}
+\end{center}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Bilangan berapa saja yang kamu lingkari? Mana yang paling kecil?
+    \item Tulis semua faktor 12 dan semua faktor 18. Faktor mana yang sama? Mana yang terbesar?
+\end{enumerate}
+
+Bilangan terkecil yang muncul di kedua baris disebut \textbf{KPK} (Kelipatan Persekutuan
+terKecil). Faktor terbesar yang sama disebut \textbf{FPB} (Faktor Persekutuan terBesar).
+\end{selidiki}
+
+\subsection*{Langkah 1: FPB dan KPK dengan faktorisasi prima}
+\textbf{FPB:} ambil faktor prima yang sama, dengan pangkat terkecil.
+\textbf{KPK:} ambil semua faktor prima, dengan pangkat terbesar.
+
+\begin{contoh}
+\textbf{Contoh.} Tentukan FPB dan KPK dari 72 dan 120.
+
+\textit{Jawab:} $72 = 2^3 \times 3^2$ dan $120 = 2^3 \times 3 \times 5$.
+FPB $= 2^3 \times 3 = \textbf{24}$. KPK $= 2^3 \times 3^2 \times 5 = \textbf{360}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item FPB dan KPK dari 20 dan 30 adalah \kosong{} dan \kosong.
+    \item FPB dan KPK dari 24 dan 36 adalah \kosong{} dan \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 2: Soal cerita, FPB atau KPK?}
+Kata ``dibagi rata sebanyak-banyaknya'' atau ``sepanjang-panjangnya'' biasanya \textbf{FPB}.
+Kata ``bersamaan lagi'' atau ``bertemu lagi'' biasanya \textbf{KPK}.
+
+\begin{contoh}
+\textbf{Contoh.} Tiga lampu berkedip setiap 4, 6, dan 10 detik. Saat ini ketiganya berkedip
+bersamaan. Berapa detik lagi mereka berkedip bersamaan lagi?
+
+\textit{Jawab:} Kata kuncinya ``bersamaan lagi'', jadi KPK. KPK$(4, 6, 10) = \textbf{60}$ detik.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item 24 apel dan 36 jeruk dibagi rata ke kantong sebanyak-banyaknya. Banyak kantongnya \kosong.
+    \item Ani les setiap 3 hari dan Budi setiap 4 hari. Hari ini mereka les bersama. Mereka les
+          bersama lagi \kosong{} hari kemudian.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 3: FPB $\times$ KPK $= a \times b$}
+Untuk dua bilangan $a$ dan $b$, hasil kali FPB dan KPK-nya selalu sama dengan $a \times b$.
+
+\begin{contoh}
+\textbf{Contoh.} FPB dua bilangan adalah 4 dan KPK-nya 48. Salah satu bilangannya 12.
+Berapa bilangan yang lain?
+
+\textit{Jawab:} $4 \times 48 = 12 \times b$, jadi $b = 192 \div 12 = \textbf{16}$.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item FPB 5, KPK 60, dan salah satu bilangannya 15. Bilangan yang lain \kosong.
+    \item Hasil kali dua bilangan 180 dan FPB-nya 6. KPK-nya \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\subsection*{Langkah 4: FPB bilangan besar}
+Kalau bilangannya besar dan sulit difaktorkan, gunakan cara ini:
+FPB$(a, b)$ = FPB$(b,$ sisa $a \div b)$. Ulangi sampai sisanya 0.
+
+\begin{contoh}
+\textbf{Contoh.} Tentukan FPB$(1309, 1001)$.
+
+\textit{Jawab:} 1309 dibagi 1001 sisa 308. 1001 dibagi 308 sisa 77. 308 dibagi 77 sisa 0.
+Jadi FPB-nya \textbf{77}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item FPB$(391, 299)$ adalah \kosong.
+    \item FPB$(2026, 2024)$ adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+\begin{rangkuman}
+\begin{enumerate}
+    \item FPB: faktor prima yang sama, pangkat terkecil. KPK: semua faktor prima, pangkat terbesar.
+    \item ``Dibagi rata sebanyak-banyaknya'' biasanya FPB. ``Bersamaan lagi'' biasanya KPK.
+    \item FPB $\times$ KPK $= a \times b$.
+    \item FPB bilangan besar: FPB$(a, b)$ = FPB$(b,$ sisa $a \div b)$.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: 10 dan 60, 12 dan 72. \quad Langkah 2: 12, 12. \quad
+Langkah 3: 20, 30. \quad Langkah 4: 23, 2.
+
+\newpage
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+    \item Tentukan FPB dan KPK dari 12 dan 18.
+          \jawab{FPB 6, KPK 36}{}
+    \item Tentukan FPB dan KPK dari $2^3 \times 3^2 \times 5$ dan $2^2 \times 3^4 \times 7$.
+          \jawab{FPB $2^2 \times 3^2 = 36$, KPK $2^3 \times 3^4 \times 5 \times 7 = 22680$}{}
+    \item \textbf{(Bus Sekolah)} Bus A berangkat setiap 15 menit dan bus B setiap 20 menit.
+          Keduanya berangkat bersama pukul 06.00. Pukul berapa keduanya berangkat bersama lagi?
+          \jawab{07.00}{KPK$(15, 20) = 60$ menit.}
+    \item FPB dua bilangan adalah 6 dan KPK-nya 72. Jika salah satu bilangannya 18, berapakah
+          bilangan yang lain?
+          \jawab{24}{$6 \times 72 \div 18$.}
+    \item \textbf{(Ubin Kelas)} Lantai kelas berukuran 420 cm $\times$ 315 cm akan ditutup ubin
+          persegi yang sama besar, sebesar-besarnya, tanpa dipotong. Berapa ukuran ubinnya dan
+          berapa banyak ubin yang dibutuhkan?
+          \jawab{ubin 105 cm, 12 ubin}{FPB$(420, 315) = 105$. Banyak ubin $4 \times 3$.}
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item \textbf{(Tiga Lonceng)} Tiga lonceng berdentang setiap 8, 12, dan 18 menit. Ketiganya
+          berdentang bersama pukul 07.00. Berapa kali ketiganya berdentang bersama dari pukul 07.00
+          sampai 17.00 (termasuk pukul 07.00)?
+          \jawab{9 kali}{KPK = 72 menit. Dalam 600 menit: menit ke-0, 72, 144, \dots, 576.}
+    \item Berapakah FPB$(2025, 2026)$? Jelaskan alasannya.
+          \jawab{1}{Bilangan yang membagi keduanya juga membagi selisihnya, yaitu 1.}
+    \item Carilah FPB$(1517, 1147)$.
+          \jawab{37}{1517 dibagi 1147 sisa 370, 1147 dibagi 370 sisa 37, 370 dibagi 37 sisa 0.}
+    \item Tentukan bilangan terkecil yang lebih dari 2 dan jika dibagi 3, 4, maupun 5 selalu
+          bersisa 2.
+          \jawab{62}{KPK$(3, 4, 5) = 60$, ditambah 2.}
+    \item \textbf{(Roda Gigi)} Roda gigi A punya 24 gigi dan roda gigi B punya 36 gigi. Keduanya
+          saling bersinggungan dan diberi tanda di titik pertemuannya. Setelah berapa putaran
+          roda A kedua tanda bertemu lagi? Berapa putaran roda B saat itu?
+          \jawab{A 3 putaran, B 2 putaran}{KPK$(24, 36) = 72$ gigi.}
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item Tentukan bilangan terkecil yang jika dibagi 3 bersisa 2, dibagi 4 bersisa 3, dan dibagi
+          5 bersisa 4. \textit{(Petunjuk: apa yang terjadi kalau bilangan itu ditambah 1?)}
+          \jawab{59}{Bilangan itu ditambah 1 habis dibagi 3, 4, dan 5. Jadi $60 - 1$.}
+    \item \textbf{(Barisan Upacara)} Peserta upacara jika dibariskan 4, 5, atau 6 orang per baris
+          selalu tersisa 1 orang. Tetapi jika dibariskan 7 orang per baris, tidak ada yang tersisa.
+          Berapa banyak peserta paling sedikit?
+          \jawab{301}{Bilangannya berbentuk $60k + 1$: 61, 121, 181, 241, 301. Yang habis dibagi 7
+          adalah 301.}
+    \item Ada berapa pasang bilangan $(a, b)$ dengan $a < b$ yang FPB-nya 12 dan KPK-nya 360?
+          \jawab{4}{Tulis $a = 12x$ dan $b = 12y$, dengan $x \times y = 30$ dan $x, y$ tidak punya
+          faktor sama. Pasangannya (1, 30), (2, 15), (3, 10), (5, 6).}
+    \item Tunjukkan bahwa FPB$(n, n+2)$ hanya bisa 1 atau 2. Kapan nilainya 2?
+          \jawab{bukti}{FPB membagi selisihnya, yaitu 2. Nilainya 2 jika $n$ genap.}
+    \item Tentukan FPB$(2^{20} - 1, 2^{12} - 1)$.
+          \textit{(Petunjuk: $2^{20} - 1 = 2^8 \times (2^{12} - 1) + (2^8 - 1)$.)}
+          \jawab{15}{Seperti Langkah 4, FPB-nya sama dengan FPB$(2^{12} - 1, 2^8 - 1)$, lalu
+          FPB$(2^8 - 1, 2^4 - 1)$. Karena $255 = 15 \times 17$, hasilnya $2^4 - 1 = 15$.}
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{15}
+    \item Buktikan bahwa untuk setiap bilangan asli $n$, pecahan $\dfrac{21n + 4}{14n + 3}$
+          tidak dapat disederhanakan.
+          \jawab{bukti}{Pecahan tidak dapat disederhanakan jika FPB pembilang dan penyebutnya 1.
+          Misalkan $d$ membagi $21n + 4$ dan $14n + 3$. Maka $d$ juga membagi
+          \[ 3(14n + 3) - 2(21n + 4) = 42n + 9 - 42n - 8 = 1. \]
+          Bilangan yang membagi 1 hanya 1. Jadi FPB-nya 1, dan pecahan itu tidak dapat
+          disederhanakan. \hfill$\blacksquare$\\
+          \emph{Catatan: ini soal IMO 1959 nomor 1.}}
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional)}
+\textit{Tulis jawaban lengkap dengan alasannya.}
+\begin{enumerate}
+    \setcounter{enumi}{16}
+    \item Tentukan semua pasangan bilangan asli $(a, b)$ dengan $a < b$, $a + b = 84$, dan
+          FPB$(a, b) = 12$. Buktikan tidak ada pasangan lain.
+          \jawab{(12, 72), (24, 60), (36, 48)}{Karena FPB-nya 12, tulis $a = 12x$ dan $b = 12y$
+          dengan FPB$(x, y) = 1$ (kalau $x$ dan $y$ punya faktor sama, FPB$(a,b)$ akan lebih dari 12).
+          Dari $a + b = 84$ didapat $x + y = 7$ dengan $x < y$. Kemungkinannya $(1, 6)$, $(2, 5)$,
+          $(3, 4)$, dan ketiganya memang tidak punya faktor sama selain 1. Jadi pasangannya
+          $(12, 72)$, $(24, 60)$, $(36, 48)$. \hfill$\blacksquare$}
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section*{Soal Campuran}
+% ====================================================================
+
+Soal-soal di bawah ini sengaja tidak diberi keterangan topik, sama seperti soal olimpiade
+sungguhan. Coba tebak dulu, soal ini pakai cara yang mana? Waktu mengerjakan 60 menit.
+
+\begin{enumerate}
+    \item Tentukan angka satuan dari $2026^{2026} + 2027^{2027}$.
+          \jawab{9}{$6 + 3$.}
+    \item Tentukan sisa pembagian $2^{2026}$ oleh 5.
+          \jawab{4}{Angka satuan $2^{2026}$ adalah 4.}
+    \item Ada berapa bilangan $n$ dari 1 sampai 100 sehingga $n^2 + n$ genap?
+          \jawab{100}{$n^2 + n = n(n+1)$ selalu genap.}
+    \item Tentukan bilangan 4 digit terbesar yang habis dibagi 12 dan keempat digitnya berbeda.
+          \jawab{9876}{76 habis dibagi 4 dan jumlah digitnya 30.}
+    \item Berapakah banyak faktor dari $10!$?
+          \jawab{270}{$10! = 2^8 \times 3^4 \times 5^2 \times 7$, jadi $9 \times 5 \times 3 \times 2$.}
+    \item Hari ini hari Rabu. Hari apakah $2^{100}$ hari lagi?
+          \jawab{Jumat}{Pola sisa $2^n$ dibagi 7: 2, 4, 1. $100 \div 3$ sisa 1, jadi maju 2 hari.}
+    \item Jumlah tiga bilangan prima yang berbeda adalah 40. Tentukan hasil kali ketiganya.
+          \jawab{434}{Jumlahnya genap, jadi salah satunya harus 2. Dua lainnya berjumlah 38, yaitu 7 dan 31.}
+    \item Berapakah bilangan terkecil $n$ sehingga $2026 \times n$ adalah bilangan kuadrat?
+          \jawab{2026}{$2026 = 2 \times 1013$, dan 1013 adalah bilangan prima.}
+    \item Tentukan bilangan terkecil yang habis dibagi 1, 2, 3, \dots, 10.
+          \jawab{2520}{$2^3 \times 3^2 \times 5 \times 7$.}
+    \item Tentukan sisa pembagian $1! + 2! + 3! + \dots + 2026!$ oleh 12.
+          \jawab{9}{Mulai $4! = 24$, semuanya habis dibagi 12. Sisanya $1 + 2 + 6$.}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,146 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[bahasai]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+
+\title{\textbf{Modul Pembinaan Olimpiade Matematika SMP\\Bab 1: Teori Bilangan Dasar}}
+\author{Bahan Ajar Siswa (Kelas 7, 8, 9)}
+\date{}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Halo Calon Sang Juara!]
+Selamat datang di dunia olimpiade matematika! Di sini, kamu tidak dinilai dari seberapa cepat kamu menghitung atau seberapa banyak rumus yang kamu hafal. Di sini, kamu dinilai dari \textbf{cara kamu berpikir}. Jangan takut kalau kamu tidak tahu rumusnya, karena banyak soal olimpiade bisa dipecahkan hanya dengan logika sehari-hari. Selamat mengeksplorasi!
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\section*{Topik 1: Paritas (Logika Ganjil-Genap)}
+
+\subsection*{A. Teka-Teki Pembuka}
+Coba bayangkan kamu sedang jajan di kantin. Total belanjaanmu pas \textbf{sepuluh ribu}. Kamu hanya membawa uang lembaran \textbf{lima ribu} dan \textbf{seribu}. 
+\begin{center}
+\textit{``Bisakah kamu membayar barang tersebut menggunakan \textbf{TEPAT 3 lembar} uang tanpa ada kembalian?''}
+\end{center}
+
+Coba corat-coret dulu... 
+Sudah dicoba? Ternyata \textbf{TIDAK BISA}! Kenapa? 
+Karena lima ribu dan seribu adalah nominal bernilai \textbf{Ganjil}. Jika kamu menjumlahkan 3 bilangan ganjil, hasilnya pasti selalu bilangan ganjil. Sementara itu, sepuluh ribu adalah bilangan \textbf{Genap}. Sampai kapan pun, jumlah 3 bilangan ganjil tidak akan pernah menghasilkan bilangan genap. 
+
+Inilah yang dinamakan \textbf{Paritas} (Sifat ganjil dan genap suatu bilangan).
+
+\subsection*{B. Kotak Ingatan: Sifat Paritas}
+\begin{tcolorbox}
+\textbf{Sifat Penjumlahan \& Pengurangan:}
+\begin{itemize}
+    \item Ganjil $\pm$ Ganjil = Genap (Contoh: $3 + 5 = 8$)
+    \item Genap $\pm$ Genap = Genap (Contoh: $4 + 6 = 10$)
+    \item Ganjil $\pm$ Genap = Ganjil (Contoh: $7 + 2 = 9$)
+\end{itemize}
+
+\textbf{Sifat Perkalian:}
+\begin{itemize}
+    \item Ganjil $\times$ Ganjil = Ganjil (Contoh: $3 \times 5 = 15$)
+    \item Bilangan apa pun $\times$ Genap = Genap (Contoh: $7 \times 4 = 28$)
+\end{itemize}
+\end{tcolorbox}
+
+\subsection*{C. Latihan Soal}
+\textit{Catatan: Kerjakan tanpa harus menghitung hasil akhirnya secara detail!}
+
+\textbf{Level 1: Pemanasan (Cukup dijawab Ganjil / Genap)}
+\begin{enumerate}
+    \item Tentukan paritas (ganjil/genap) dari: $111 + 222 + 333 + 444$.
+    \item Tentukan paritas dari: $13 \times 15 \times 17 \times 19$.
+    \item Tentukan paritas dari: $(2024 \times 2025) + 2026$.
+    \item Tentukan paritas dari: $(99 \times 98) + (97 \times 96)$.
+    \item Tentukan paritas dari: $1 + 2 + 3 + 4 + 5 + \dots + 10$.
+\end{enumerate}
+
+\textbf{Level 2: Eksplorasi (Mulai pakai huruf ya!)}
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item Jika $x$ adalah bilangan ganjil dan $y$ adalah bilangan genap, apakah $x^2 + y$ ganjil atau genap?
+    \item Jika hasil dari $5a$ adalah bilangan genap, apakah $a$ pasti bilangan genap?
+    \item Jika $a+b$ bernilai ganjil, tentukan apakah $a \times b$ pasti ganjil atau genap!
+    \item Jika $3m + 7n$ adalah bilangan genap, apakah $m+n$ selalu genap? Buktikan alasannya.
+    \item Jumlah dua bilangan bulat berurutan selalu ganjil. Benar atau Salah? Berikan alasannya.
+\end{enumerate}
+
+\textbf{Level 3: Tantangan (Soal Teka-teki Logika)}
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item Ada 5 buah kotak yang disusun berjajar. Masing-masing kotak berisi sejumlah bola. Jika jumlah total bola di seluruh kotak adalah 100, bisakah semua kotak berisi bola dalam jumlah yang ganjil?
+    \item Seekor semut bergerak pada lantai kotak-kotak (seperti papan catur). Ia selalu bergerak dari kotak putih ke kotak hitam, lalu dari hitam ke putih, dan seterusnya. Jika semut mulai dari kotak putih dan melangkah sebanyak 2025 kali, di warna apakah ia akan berhenti?
+    \item Terdapat deretan angka $1, 2, 3, \dots, 9$. Kamu boleh meletakkan tanda tambah ($+$) atau kurang ($-$) di antara angka-angka tersebut. Bisakah kamu membuat hasilnya sama dengan 0? (Contoh: $1+2-3+4-5+6-7+8-9 \neq 0$).
+    \item Sebuah buku yang tebalnya 50 lembar jatuh dan robek 1 lembarnya. Jika kamu menjumlahkan semua nomor halaman yang tersisa pada buku tersebut, mungkinkah hasil penjumlahannya adalah sebuah bilangan ganjil?
+    \item Di atas meja terdapat 9 koin yang semuanya menunjukkan sisi Angka. Setiap kali melangkah, kamu diwajibkan membalik tepat 2 koin. Bisakah kamu membuat semua koin menunjukkan sisi Gambar?
+\end{enumerate}
+
+\newpage
+
+\section*{Topik 2: Pola Angka Satuan}
+
+\subsection*{A. Teka-Teki Pembuka}
+Bayangkan ini tahun 2026. Tiba-tiba seorang guru iseng bertanya: 
+\begin{center}
+\textit{``Berapakah angka terakhir (angka satuan) dari hasil perhitungan $3^{2026}$?''}
+\end{center}
+
+Apakah kamu akan mengambil kalkulator? Jangan! Kalkulatormu pasti akan error ("Syntax Error") karena angkanya terlalu besar. Lalu bagaimana cara mengerjakannya? Di matematika olimpiade, \textbf{setiap bilangan besar yang mustahil dihitung manual PASTI memiliki pola berulang.}
+
+\subsection*{B. Kotak Ingatan: Cara Mencari Pola}
+\begin{tcolorbox}
+Untuk mencari angka satuan dari sebuah bentuk pangkat yang sangat besar, kita tidak perlu mempedulikan angka di depan-depannya. Kita hanya perlu mendaftar beberapa angka satuan awal dan melihat kapan ia kembali ke awal (membentuk siklus).
+
+Mari kita lihat pola angka satuan dari pangkat 3:
+\begin{itemize}
+    \item $3^1 = 3$ \quad (Satuan \textbf{3})
+    \item $3^2 = 9$ \quad (Satuan \textbf{9})
+    \item $3^3 = 27$ \quad (Satuan \textbf{7})
+    \item $3^4 = 81$ \quad (Satuan \textbf{1})
+    \item $3^5 = 243$ \quad (Satuan \textbf{3}) $\rightarrow$ \textit{Kembali ke awal!}
+\end{itemize}
+Polanya adalah: \textbf{3, 9, 7, 1} dan terus berulang setiap \textbf{4 langkah}.\\
+Untuk mencari $3^{2026}$, cukup bagi pangkatnya (2026) dengan panjang siklus (4):
+\[2026 \div 4 = 506 \text{ dan bersisa } 2\]
+Karena sisa 2, maka ambil angka \textbf{urutan ke-2} dari pola tersebut, yaitu \textbf{9}.
+\end{tcolorbox}
+
+\subsection*{C. Latihan Soal}
+
+\textbf{Level 1: Pemanasan (Mencari Pola Dasar)}
+\begin{enumerate}
+    \item Berapakah angka satuan dari $2^{15}$?
+    \item \textbf{(Bakteri Super)} Di sebuah laboratorium, sebuah sel bakteri membelah diri menjadi 3 sel baru setiap jamnya. Pada jam pertama ada 3 bakteri, jam kedua ada 9 bakteri, dan seterusnya. Berapakah angka terakhir dari total bakteri pada jam ke-50?
+    \item Berapakah angka satuan dari $8^{100}$? (Hati-hati jika sisa pembagiannya 0 ya!)
+    \item \textbf{(Mesin Tiket)} Sebuah mesin pencetak tiket otomatis mengeluarkan nomor seri dengan aturan $7^n$, dengan $n$ adalah urutan pembeli. Pembeli ke-42 akan mendapatkan tiket dengan nomor seri yang berakhiran angka berapa?
+    \item Berapakah angka satuan dari $9^{2026}$?
+\end{enumerate}
+
+\textbf{Level 2: Eksplorasi (Operasi Campuran \& Sandi)}
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item Tentukan angka satuan dari hasil $3^{10} + 7^{10}$.
+    \item \textbf{(Gembok Koper Budi)} Budi lupa kombinasi 3 digit gembok kopernya. Ia hanya ingat sebuah petunjuk yang ia tulis di bukunya: \textit{"Digit pertama adalah angka satuan dari $2^{40}$, digit kedua angka satuan dari $3^{41}$, dan digit ketiga angka satuan dari $4^{42}$"}. Berapakah kombinasi koper Budi?
+    \item \textbf{(Sandi Rahasia Agen 007)} Seorang agen rahasia harus memasukkan pin 1 digit untuk membuka pintu brankas. Petunjuk pin tersebut berbunyi: \textit{"Angka satuan dari jumlah hari dalam seminggu dipangkatkan dengan tahun kemerdekaan Indonesia"}. Angka berapakah yang harus ditekan agen tersebut?
+    \item Tentukan angka satuan dari hasil pengurangan $9^{99} - 4^{44}$.
+    \item \textbf{(Kalkulator Rusak)} Tombol layar kalkulator Andi rusak sehingga hanya bisa menampilkan 1 digit paling belakang dari sebuah perhitungan. Jika Andi mengetikkan $2^{2025} + 2^{2026} + 2^{2027}$, angka berapakah yang muncul di layar?
+\end{enumerate}
+
+\textbf{Level 3: Tantangan (Basis Besar dan Manipulasi OSK)}
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item Tentukan angka satuan dari $2027^{2026}$. (Ingat, angka ribuan di depan tidak penting!)
+    \item \textbf{(Harta Karun Raja)} Seorang Raja memberikan hadiah koin emas kepada ksatria terbaiknya. Jumlah koin yang diberikan adalah sebanyak hasil perkalian $13^{13} \times 17^{17}$. Ksatria tersebut ingin membagikan koinnya kepada 10 panti asuhan sama rata. Berapakah koin yang tersisa (tidak habis terbagi)? \textit{(Petunjuk: Mencari sisa bagi 10 sama dengan mencari angka satuan!)}
+    \item Tentukan angka satuan dari $1^1 + 2^2 + 3^3 + 4^4 + 5^5$.
+    \item \textbf{(Bom Waktu)} Sebuah mesin pemecah sandi memiliki waktu kurang dari 1 menit untuk menghentikan hitung mundur. Mesin itu harus menebak digit terakhir dari $2^{3^4}$. Angka berapa yang harus dimasukkan? (Kerjakan pangkat yang ada di atas dulu ya!)
+    \item Berapakah angka satuan dari $(2023)^{2024} + (2024)^{2023}$?
+\end{enumerate}
+\end{document}

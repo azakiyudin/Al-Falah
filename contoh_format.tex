@@ -1,0 +1,223 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[bahasai]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{array}
+
+% Semua kotak hitam-putih (hemat tinta)
+\tcbset{colback=white, colframe=black, colbacktitle=white, coltitle=black,
+  fonttitle=\bfseries, boxrule=0.6pt, arc=1mm,
+  before upper={\setlength{\parskip}{5pt}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+% Kotak "Sekarang Giliranmu" (garis putus-putus, ada ruang menulis)
+\newtcolorbox{giliranmu}{enhanced, borderline={0.6pt}{0pt}{black, dashed},
+  frame hidden, title={Sekarang Giliranmu!}, attach boxed title to top left={xshift=3mm, yshift=-2mm},
+  boxed title style={colframe=white, colback=white}}
+
+\newcommand{\kosong}{\rule{1.2cm}{0.4pt}}
+
+% Kotak abu-abu (monokrom)
+\newtcolorbox{selidiki}{enhanced, breakable, colback=black!4, colframe=black!60,
+  colbacktitle=black!15, coltitle=black, title={Ayo Selidiki!}}
+\newtcolorbox{contoh}{enhanced, breakable, colback=black!4, colframe=black!55,
+  boxrule=0pt, leftrule=3pt, arc=0pt, left=3mm, before skip=6pt, after skip=6pt}
+\newtcolorbox{rangkuman}{enhanced, colback=white, colframe=black!60,
+  colbacktitle=black!15, coltitle=black, title={Rangkuman}}
+
+% Label level: blok abu-abu kecil
+\newcommand{\level}[1]{\par\medskip\noindent\colorbox{black!12}{\strut\textbf{#1}}\par\smallskip}
+
+\begin{document}
+
+\section*{Topik 2: Pola Angka Satuan}
+
+% --------------------------------------------------------------------
+\begin{selidiki}
+Ambil pensilmu. Lengkapi tabel di bawah ini. Kamu cukup menulis \textbf{angka satuannya}
+saja (angka paling belakang).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|*{8}{>{\centering\arraybackslash}p{0.9cm}|}}
+\hline
+Pangkat ke- & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\ \hline
+Satuan $2^n$ & 2 & 4 & 8 & & & & & \\ \hline
+Satuan $3^n$ & 3 & 9 & & & & & & \\ \hline
+\end{tabular}
+\end{center}
+
+\textit{Petunjuk: kamu tidak perlu menghitung $2^8$ sampai habis. Cukup kalikan angka satuan
+sebelumnya. Misalnya, satuan $2^3$ adalah 8, jadi satuan $2^4$ sama dengan satuan
+$8 \times 2 = 16$, yaitu 6.}
+
+Sekarang jawab:
+\begin{enumerate}
+    \item Apa yang kamu lihat pada baris $2^n$? Angka apa saja yang muncul berulang?
+    \item Setelah berapa langkah polanya kembali ke awal?
+    \item Tanpa menghitung, tebak angka satuan $2^{9}$ dan $2^{10}$.
+\end{enumerate}
+
+Kalau kamu menemukan bahwa angka satuannya berulang terus, selamat! Kamu baru saja menemukan
+rahasia untuk menghitung bilangan raksasa seperti $3^{2026}$ tanpa kalkulator.
+\end{selidiki}
+
+% --------------------------------------------------------------------
+\subsection*{Langkah 1: Bagi pangkatnya dengan panjang pola}
+Pola angka satuan dari pangkat 3 adalah \textbf{3, 9, 7, 1}, lalu berulang. Panjang polanya 4.
+
+\begin{contoh}
+\textbf{Contoh.} Berapa angka satuan dari $3^{2026}$?
+
+\textit{Jawab:} Bagi pangkatnya dengan 4: $2026 \div 4 = 506$ sisa \textbf{2}. Ambil angka
+urutan ke-2 dari pola (3, \textbf{9}, 7, 1). Jadi angka satuannya \textbf{9}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Angka satuan dari $2^{15}$ adalah \kosong. \quad (pola 2: 2, 4, 8, 6)
+    \item Angka satuan dari $7^{42}$ adalah \kosong. \quad (pola 7: 7, 9, 3, 1)
+\end{enumerate}
+\end{giliranmu}
+
+% --------------------------------------------------------------------
+\subsection*{Langkah 2: Hati-hati kalau sisanya 0}
+Kalau pangkatnya habis dibagi panjang pola, tidak ada ``urutan ke-0''. Ambil angka yang
+\textbf{paling terakhir} dari pola.
+
+\begin{contoh}
+\textbf{Contoh.} Berapa angka satuan dari $3^{100}$?
+
+\textit{Jawab:} $100 \div 4 = 25$ sisa \textbf{0}. Ambil angka terakhir dari pola
+(3, 9, 7, \textbf{1}). Jadi angka satuannya \textbf{1}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Angka satuan dari $8^{100}$ adalah \kosong. \quad (pola 8: 8, 4, 2, 6)
+    \item Angka satuan dari $2^{2024}$ adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+% --------------------------------------------------------------------
+\subsection*{Langkah 3: Angka di depan tidak penting}
+Angka satuan hasil perkalian hanya ditentukan oleh angka satuan bilangannya. Jadi angka
+ribuan, ratusan, dan puluhan boleh kita abaikan.
+
+\begin{contoh}
+\textbf{Contoh.} Berapa angka satuan dari $2027^{2026}$?
+
+\textit{Jawab:} Angka satuan 2027 adalah 7, jadi cukup cari angka satuan $7^{2026}$.
+$2026 \div 4$ sisa 2. Urutan ke-2 dari pola (7, \textbf{9}, 3, 1) adalah \textbf{9}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Angka satuan dari $1234^{5}$ adalah \kosong.
+    \item Angka satuan dari $2029^{2026}$ adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+% --------------------------------------------------------------------
+\subsection*{Langkah 4: Menjumlah dan mengali}
+Cari angka satuan masing-masing dulu, baru dijumlah atau dikali. Setelah itu, ambil lagi
+angka satuannya.
+
+\begin{contoh}
+\textbf{Contoh.} Berapa angka satuan dari $4^{2025} + 6^{2025}$?
+
+\textit{Jawab:} Pola 4 adalah 4, 6, 4, 6, \dots{} Pangkatnya ganjil, jadi satuannya 4.
+Pangkat dari 6 selalu berakhiran 6. Jadi $4 + 6 = 10$, dan angka satuannya \textbf{0}.
+\end{contoh}
+
+\begin{giliranmu}
+\begin{enumerate}[label=\alph*.]
+    \item Angka satuan dari $2^{2025} + 2^{2026}$ adalah \kosong.
+    \item Angka satuan dari $2^{10} \times 3^{10}$ adalah \kosong.
+\end{enumerate}
+\end{giliranmu}
+
+% --------------------------------------------------------------------
+\begin{rangkuman}
+\begin{enumerate}
+    \item Tulis beberapa angka satuan awal sampai polanya berulang.
+    \item Bagi pangkatnya dengan panjang pola, lalu lihat sisanya.
+    \item Sisa 1 berarti urutan ke-1, sisa 2 berarti urutan ke-2, dan seterusnya.
+          \textbf{Sisa 0 berarti urutan terakhir.}
+    \item Angka di depan tidak penting. Cukup lihat angka satuannya.
+    \item Untuk menjumlah atau mengali, cari angka satuan masing-masing dulu.
+\end{enumerate}
+\end{rangkuman}
+
+\textit{Kunci Giliranmu:} Langkah 1: 8, 9. \quad Langkah 2: 6, 6. \quad Langkah 3: 4, 1. \quad
+Langkah 4: 6, 6.
+
+\newpage
+% --------------------------------------------------------------------
+\subsection*{Latihan Soal}
+
+\level{Level 1: Pemanasan}
+\begin{enumerate}
+    \item Berapakah angka satuan dari $9^{2026}$?
+    \item \textbf{(Bakteri Super)} Di sebuah laboratorium, sebuah sel bakteri membelah diri
+          menjadi 3 sel baru setiap jamnya. Pada jam pertama ada 3 bakteri, jam kedua ada
+          9 bakteri, dan seterusnya. Berapakah angka terakhir dari total bakteri pada jam ke-50?
+    \item \textbf{(Mesin Tiket)} Sebuah mesin pencetak tiket otomatis mengeluarkan nomor seri
+          dengan aturan $7^n$, dengan $n$ adalah urutan pembeli. Pembeli ke-41 akan mendapatkan
+          tiket dengan nomor seri yang berakhiran angka berapa?
+    \item Berapakah angka satuan dari $5^{2026}$ dan $6^{2026}$?
+    \item Berapakah angka satuan dari $4^{99}$?
+\end{enumerate}
+
+\level{Level 2: Eksplorasi}
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item Tentukan angka satuan dari hasil $3^{10} + 7^{10}$.
+    \item \textbf{(Gembok Koper Budi)} Budi lupa kombinasi 3 digit gembok kopernya. Ia hanya
+          ingat sebuah petunjuk yang ia tulis di bukunya: \textit{``Digit pertama adalah angka
+          satuan dari $2^{40}$, digit kedua angka satuan dari $3^{41}$, dan digit ketiga angka
+          satuan dari $4^{42}$''}. Berapakah kombinasi koper Budi?
+    \item \textbf{(Sandi Rahasia Agen 007)} Seorang agen rahasia harus memasukkan pin 1 digit
+          untuk membuka pintu brankas. Petunjuk pin tersebut berbunyi: \textit{``Angka satuan dari
+          jumlah hari dalam seminggu dipangkatkan dengan tahun kemerdekaan Indonesia''}.
+          Angka berapakah yang harus ditekan agen tersebut?
+    \item Tentukan angka satuan dari hasil pengurangan $9^{99} - 4^{44}$.
+    \item \textbf{(Kalkulator Rusak)} Tombol layar kalkulator Andi rusak sehingga hanya bisa
+          menampilkan 1 digit paling belakang dari sebuah perhitungan. Jika Andi mengetikkan
+          $2^{2025} + 2^{2026} + 2^{2027}$, angka berapakah yang muncul di layar?
+\end{enumerate}
+
+\level{Level 3: Tantangan OSK}
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item Tentukan angka satuan dari $2023^{2024} + 2024^{2023}$.
+    \item \textbf{(Harta Karun Raja)} Seorang Raja memberikan hadiah koin emas kepada ksatria
+          terbaiknya. Jumlah koin yang diberikan adalah sebanyak hasil perkalian
+          $13^{13} \times 17^{17}$. Ksatria tersebut ingin membagikan koinnya kepada 10 panti
+          asuhan sama rata. Berapakah koin yang tersisa (tidak habis terbagi)?
+    \item Tentukan angka satuan dari $1^1 + 2^2 + 3^3 + 4^4 + 5^5$.
+    \item \textbf{(Bom Waktu)} Sebuah mesin pemecah sandi harus menebak digit terakhir dari
+          $2^{3^4}$. Angka berapa yang harus dimasukkan? (Kerjakan pangkat yang ada di atas dulu ya!)
+    \item Tentukan angka satuan dari $1^{2026} + 2^{2026} + 3^{2026} + \dots + 9^{2026}$.
+\end{enumerate}
+
+\level{Level 4: Setara OSP (Provinsi), tulis jawaban lengkap dengan alasannya}
+\begin{enumerate}
+    \setcounter{enumi}{15}
+    \item Buktikan bahwa untuk setiap bilangan asli $n$, bilangan $n^5 - n$ selalu habis
+          dibagi 10.
+\end{enumerate}
+
+\level{Level 5: Setara OSN (Nasional), tulis jawaban lengkap dengan alasannya}
+\begin{enumerate}
+    \setcounter{enumi}{16}
+    \item Tentukan semua bilangan asli $n$ sehingga $n^n$ berakhiran angka 7.
+          Buktikan bahwa tidak ada bilangan lain yang memenuhi.
+\end{enumerate}
+
+\end{document}

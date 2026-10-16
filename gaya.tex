@@ -1,0 +1,61 @@
+% ====================================================================
+%  GAYA BERSAMA MODUL OLIMPIADE (dipakai teobil_isi.tex & kombin_isi.tex)
+%  Semua tampilan hitam-putih / abu-abu supaya hemat tinta.
+% ====================================================================
+\usepackage[bahasai]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{comment}
+\usepackage{tikz}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+
+\tcbset{colback=white, colframe=black, colbacktitle=white, coltitle=black,
+  fonttitle=\bfseries, boxrule=0.6pt, arc=1mm,
+  before upper={\setlength{\parskip}{5pt}}}
+
+% Kegiatan pembuka
+\newtcolorbox{selidiki}{enhanced, breakable, colback=black!4, colframe=black!60,
+  colbacktitle=black!15, coltitle=black, title={Ayo Selidiki!}}
+
+% Contoh soal (abu-abu tipis, garis tebal di kiri)
+\newtcolorbox{contoh}{enhanced, breakable, colback=black!4, colframe=black!55,
+  boxrule=0pt, leftrule=3pt, arc=0pt, left=3mm, before skip=6pt, after skip=6pt}
+
+% Soal untuk dicoba langsung (putih, garis putus-putus)
+\newtcolorbox{giliranmu}{enhanced, borderline={0.6pt}{0pt}{black, dashed},
+  frame hidden, title={Sekarang Giliranmu!},
+  attach boxed title to top left={xshift=3mm, yshift=-2mm},
+  boxed title style={colframe=white, colback=white}}
+
+% Ringkasan akhir topik
+\newtcolorbox{rangkuman}{enhanced, colback=white, colframe=black!60,
+  colbacktitle=black!15, coltitle=black, title={Rangkuman}}
+
+% Garis isian
+\newcommand{\kosong}{\rule{1.2cm}{0.4pt}}
+
+% Label level: blok abu-abu kecil
+\newcommand{\level}[1]{\par\medskip\noindent\colorbox{black!12}{\strut\textbf{#1}}\par\smallskip}
+
+% Pembahasan soal: hanya muncul di Edisi Guru
+\newtcolorbox{kotakjawab}{enhanced, breakable, boxrule=0pt, leftrule=2pt, arc=0pt,
+  colback=white, colframe=black, left=2mm, top=1mm, bottom=1mm,
+  before skip=3pt, after skip=3pt}
+\newcommand{\jawab}[2]{\ifguru
+  \begin{kotakjawab}\small\textbf{Jawaban: #1.} #2\end{kotakjawab}\fi}
+
+% Catatan mengajar: hanya muncul di Edisi Guru
+\ifguru
+  \newtcolorbox{catatanguru}{breakable, colback=white, colframe=black!60,
+    colbacktitle=black!15, title={Catatan untuk Guru}}
+\else
+  \excludecomment{catatanguru}
+\fi
+
+\newcommand{\C}[2]{\binom{#1}{#2}}

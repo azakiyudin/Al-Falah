@@ -1,0 +1,9 @@
+\babel@toc {bahasai}{}\relax 
+\contentsline {section}{Panduan Guru}{1}{Doc-Start}%
+\contentsline {section}{\numberline {1}Aturan Penjumlahan \& Perkalian}{3}{section.1}%
+\contentsline {section}{\numberline {2}Mencacah dengan Cerdik}{7}{section.2}%
+\contentsline {section}{\numberline {3}Permutasi (Urutan Itu Penting!)}{11}{section.3}%
+\contentsline {section}{\numberline {4}Kombinasi (Memilih Tanpa Urutan)}{14}{section.4}%
+\contentsline {section}{\numberline {5}Prinsip Sarang Merpati}{17}{section.5}%
+\contentsline {section}{\numberline {6}Peluang Dasar}{21}{section.6}%
+\contentsline {section}{Uji Detektif: Soal Campuran}{24}{Item.97}%
